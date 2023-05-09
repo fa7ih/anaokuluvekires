@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UıLayout.cshtml";
+}
+
+<!doctype html>
+<html lang="en">
+
+
+<body>
+
+    <section class="inner-banner py-5">
+        <div class="w3l-breadcrumb py-lg-5">
+            <div class="container pt-4 pb-sm-4">
+                <h4 class="inner-text-title pt-5">İletişim</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/Default/Index/">Ana Sayfa</a></li>
+                    <li class="active"><i class="fas fa-angle-right"></i>İletişim</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="w3l-contact py-5" id="contact">
+        <div class="container py-md-5 py-4">
+            <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+                <p class="text-uppercase">Bizimle</p>
+                <h3 class="title-style">İletişime Geçin</h3>
+            </div>
+            <div class="row contact-block">
+                @await Html.PartialAsync("~/Views/LayoutPartial/ContactPartial.cshtml")
+                @await Component.InvokeAsync("_Information")
+
+            </div>
+        </div>
+    </section>
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317718.69319292053!2d-0.3817765050863085!3d51.528307984912544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C+UK!5e0!3m2!1sen!2spl!4v1562654563739!5m2!1sen!2spl"
+                width="100%" height="400" frameborder="0" style="border: 0px;" allowfullscreen=""></iframe>
+    </div>
+</body>
+</html>
+

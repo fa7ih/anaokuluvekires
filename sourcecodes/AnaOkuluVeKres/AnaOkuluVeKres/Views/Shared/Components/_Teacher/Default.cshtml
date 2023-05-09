@@ -1,0 +1,46 @@
+﻿@using EntityLayer.Concrete
+@model List<Teacher>
+<div class="w3l-grids-block-5 home-course-bg py-5" id="courses">
+    <div class="container py-md-5 py-4">
+        <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+            <h3 class="title-style">Eğitmenlerimiz</h3>
+        </div>
+        <div class="row justify-content-center">
+            @foreach (var item in Model.Take(3))
+            {
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="coursecard-single">
+                        <div class="grids5-info position-relative">
+                            <img src="@item.TeacherImgUrl" alt="" class="img-fluid" />
+                            <div class="meta-list">
+                                <a>@item.TeacherBranch</a>
+                            </div>
+                        </div>
+                        <div class="content-main-top">
+                            <div class="content-top mb-4 mt-3">
+                                <ul class="list-unstyled d-flex align-items-center justify-content-between">
+                                    <li> <i class="fas fa-star"></i> 4.5</li>
+                                </ul>
+                            </div>
+                            <h4><a>@item.TeacherNameSurname</a></h4>
+                            <p>@(item.TeacherBiography.Length > 75 ? item.TeacherBiography.Substring(0, item.TeacherBiography.Substring(0, 80).LastIndexOf(" ")) + "..." : item.TeacherBiography + "...")</p>
+                            <div class="top-content-border d-flex align-items-center justify-content-between mt-4 pt-4">
+                                <a class="btn btn-style-primary" href="/Teacher/Index/">
+                                    Öğretmenimizin Detayları<i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            }
+        </div>
+        <div class="text-center mt-sm-5 mt-4 pt-sm-0 pt-1">
+            <a class="btn btn-style btn-style-secondary mt-sm-3" href="/Teacher/Index/">
+                Daha Fazla Eğitmene Göz Atın
+            </a>
+        </div>
+    </div>
+</div>

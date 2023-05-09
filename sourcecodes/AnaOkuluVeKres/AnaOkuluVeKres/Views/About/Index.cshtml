@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UıLayout.cshtml";
+}
+
+
+<!doctype html>
+<html lang="en">
+
+
+<body>
+
+    <section class="inner-banner py-5">
+        <div class="w3l-breadcrumb py-lg-5">
+            <div class="container pt-4 pb-sm-4">
+                <h4 class="inner-text-title pt-5">Hakkımızda</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/Default/Index/">Ana Sayfa</a></li>
+                    <li class="active"><i class="fas fa-angle-right"></i>Hakkımızda</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    @await Component.InvokeAsync("_HomeAbout")   
+    @await Component.InvokeAsync("_Statistics")  
+    @await Component.InvokeAsync("_Teacher")    
+    @await Component.InvokeAsync("_About")    
+    @await Component.InvokeAsync("_SubContact")
+</body>
+</html>

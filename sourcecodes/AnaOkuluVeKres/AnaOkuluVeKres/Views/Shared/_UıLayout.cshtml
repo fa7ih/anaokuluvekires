@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "_UıLayout";
+}
+<!doctype html>
+<html lang="en">
+@await Html.PartialAsync("~/Views/LayoutPartial/HeaderPartial.cshtml")
+<body>
+    @await Html.PartialAsync("~/Views/LayoutPartial/NavBarPartial.cshtml")
+    @RenderBody()
+    @await Html.PartialAsync("~/Views/LayoutPartial/FooterPartial.cshtml")
+    @await Html.PartialAsync("~/Views/LayoutPartial/ScriptsPartial.cshtml")
+</body>
+</html>
+

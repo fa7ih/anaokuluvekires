@@ -1,0 +1,98 @@
+﻿@model AnaOkuluVeKres.Models.ParentRegisterViewModel
+@{
+    ViewData["Title"] = "SignUp";
+    Layout = "~/Views/Shared/_UıLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<link href="~/web/css/style.css" type="text/css" rel="stylesheet" media="all">
+
+	<link rel="stylesheet" href="~/web/css/font-awesome.css"> 
+
+</head>
+<body>
+	<section class="register">
+		<div class="register-full">
+			<div class="register-left">
+				<div class="register">
+					<div class="logo">
+						<a href="#"><span class="fa fa-graduation-cap" aria-hidden="true"></span></a>
+					</div>
+					<h1>KURSUMUZA KAYIT OLUN</h1>
+					<div class="content3">
+						<ul>
+							<li><a class="" href="/Login/SignIn/"> Bir Hesabınız Var Mı?</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="register-right">
+				<div class="register-in">
+					<h2><span class="fa fa-pencil"></span>  Veli Kayıt Ekranı</h2>
+					<div class="register-form">
+						<form  method="post">
+							<div class="fields-grid">
+								<div class="styled-input agile-styled-input-top">
+									<input type="text" asp-for="Name" required="">
+									<label>Adınız</label>
+									<span asp-validation-for="Name" class="text-danger"></span>
+								</div>
+								<div class="styled-input agile-styled-input-top">
+									<input type="text" asp-for="Surname" required="">
+									<label>Soy Adınız</label>
+									<span asp-validation-for="Surname" class="text-danger"></span>
+								</div>
+								<div class="styled-input">
+									<input type="email" asp-for="Mail" required="">
+									<label>Mail Adresiniz</label>
+									<span asp-validation-for="Mail" class="text-danger"></span>
+								</div>
+								<div class="styled-input">
+									<input type="text" asp-for="UserName" required="">
+									<label>Kullanıcı Adınız</label>
+									<span asp-validation-for="UserName" class="text-danger"></span>
+								</div>
+								<div class="styled-input">
+									<input type="password" asp-for="Password" required="">
+									<label>Şifreniz</label>
+									<span asp-validation-for="Password" class="text-danger"></span>
+								</div>
+								<div class="styled-input">
+									<input type="password" asp-for="ConfirmPassword" required="">
+									<label>Şifre Tekrar</label>
+									<span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+								</div>
+								@*<div class="styled-input agile-styled-input-top">
+									<select id="category2" required="">
+										<option value="">Öğrenciniz*</option>
+										<option value="">Diploma</option>
+										<option value="">Full time</option>
+										<option value="">Part time</option>
+										<option value="">Higher degree</option>
+										<option value="">Graduate</option>
+										<option value="">Pg</option>
+										<option value="">Degree</option>
+									</select>
+									<span></span>
+								</div>*@
+								<div class="text-danger" asp-validation-summary="ModelOnly"></div>
+								<div class="clear"> </div>
+							</div>
+							<input type="submit" value="Kayıt Olun">
+						</form>
+					</div>
+				</div>
+				<div class="clear"> </div>
+			</div>
+			<div class="clear"> </div>
+		</div>
+
+	</section>
+
+	<br />
+</body>
+</html>
+
