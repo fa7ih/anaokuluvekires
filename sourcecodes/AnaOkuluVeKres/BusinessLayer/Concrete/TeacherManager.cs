@@ -35,7 +35,7 @@ namespace BusinessLayer.Concrete
 
         public Teacher TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _teacherDal.GetById(id);
         }
 
         public void TUpdate(Teacher t)

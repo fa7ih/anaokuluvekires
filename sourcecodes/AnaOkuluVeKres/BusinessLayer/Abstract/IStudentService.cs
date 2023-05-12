@@ -9,5 +9,8 @@ namespace BusinessLayer.Abstract
 {
     public interface IStudentService:IGenericService<Student>
     {
+        List<Student> GetListApprovalStudent(int id);
+        List<Student> GetlistWithStudentByAccepted(int id);
+        List<Student> GetlistWithStudentByWaitDisapproved(int id);
     }
 }

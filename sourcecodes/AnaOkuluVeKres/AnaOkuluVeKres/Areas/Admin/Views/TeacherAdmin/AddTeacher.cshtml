@@ -1,0 +1,55 @@
+﻿@model AnaOkuluVeKres.Areas.Admin.Models.TeacherAdd
+@{
+    ViewData["Title"] = "AddTeacher";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Öğretmen Eklkeme Sayfası</h1>
+<br />
+<form method="post">
+    <div class="form-group">
+        <h5>Öğretmen TC Kimlik No</h5>
+        <input type="text" asp-for="teacherTC" class="form-control" maxlength="11" />
+    </div>
+    <br />
+    <div class="form-group">
+        <h5>Öğretmen Adı Soyadı</h5>
+        <input type="text" asp-for="teacherNameSurname" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <h5>Öğretmen Kullanıcı Adı</h5>
+        <input type="text" asp-for="teacherUserName" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <h5>Öğremten Branşı</h5>
+        <input type="text" asp-for="teacherBranch" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <h5>Öğretmen Doğum Tarihi</h5>
+        <input type="date" asp-for="teacherBirth" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <h5>Öğretmen Cinsiyeti</h5>
+        <select asp-for="teacherGender" class="form-control">
+            <option value="erkek">Erkek</option>
+            <option value="kadın">Kadın</option>
+        </select>
+    </div>
+    <br />
+    <div class="form-group">
+        <h5>Öğremten Biyografisi</h5>
+        <textarea cols="30" rows="5" class="form-control" asp-for="teacherBiography"></textarea>
+    </div>
+    <br />
+    <div class="form-group">
+        <h4>Resim Seçin</h4>
+        <input type="file" asp-for="teacherImgUrl" />
+    </div>
+    <br />
+    <button class="btn btn-outline-success">Kayıt Et</button>
+</form>
+

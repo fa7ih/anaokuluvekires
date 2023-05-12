@@ -13,11 +13,14 @@ namespace EntityLayer.Concrete
         public int TeacherId { get; set; }
         public string TeacherNameSurname { get; set; }
         public string TeacherUserName { get; set; }
-        public string TeacherPassword { get; set; }
+        public long TeacherTC { get; set; }
+        public DateTime TeacherBirth { get; set; }
         public string TeacherBranch { get; set; }
         public string TeacherImgUrl { get; set; }
         public bool TeacherStatus { get; set; }
         public string TeacherBiography { get; set; }
+        public string TeacherGender { get; set; }
+
     }
 }
  

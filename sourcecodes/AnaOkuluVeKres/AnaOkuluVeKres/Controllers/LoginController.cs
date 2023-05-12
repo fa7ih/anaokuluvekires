@@ -64,7 +64,7 @@ namespace AnaOkuluVeKres.Controllers
                 var result = await _signInManager.PasswordSignInAsync(parentSignInViewModel.username, parentSignInViewModel.password, false, true);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "MyProfile" , new {area = "Parents"});
+                    return RedirectToAction("Index", "Dashboard" , new {area = "Parents"});
                 }
                 else
                 {

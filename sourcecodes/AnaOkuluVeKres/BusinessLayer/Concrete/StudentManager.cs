@@ -23,6 +23,21 @@ namespace BusinessLayer.Concrete
             return _studentDal.GetList();
         }
 
+        public List<Student> GetListApprovalStudent(int id)
+        {
+            return _studentDal.GetListByFilter(x=>x.AppUser.Id == id && x.Status == "Onay Bekliyor");
+        }
+
+        public List<Student> GetlistWithStudentByAccepted(int id)
+        {
+            return _studentDal.GetlistWithStudentByAccepted(id);
+        }
+
+        public List<Student> GetlistWithStudentByWaitDisapproved(int id)
+        {
+            return _studentDal.GetlistWithStudentByWaitDisapproved(id);
+        }
+
         public void TAdd(Student t)
         {
             _studentDal.Insert(t);

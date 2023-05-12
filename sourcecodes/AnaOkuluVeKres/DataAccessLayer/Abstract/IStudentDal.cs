@@ -9,5 +9,7 @@ namespace DataAccessLayer.Abstract
 {
     public interface IStudentDal:IGenericDal<Student>
     {
+        List<Student> GetlistWithStudentByWaitDisapproved(int id);
+        List<Student> GetlistWithStudentByAccepted(int id);
     }
 }

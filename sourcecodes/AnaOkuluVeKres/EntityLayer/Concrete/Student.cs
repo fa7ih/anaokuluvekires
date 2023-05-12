@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace EntityLayer.Concrete
 {
@@ -15,6 +16,8 @@ namespace EntityLayer.Concrete
         public string StudentName { get; set; }
         public string StudentSurName { get; set; }
         public int StudentNo { get; set; }
+        public long StudentTc { get; set; }
+        public DateTime StudentBirth { get; set; }
         public string StudentImageUrl { get; set; }
         public string StudentClass { get; set; }
         public string StudentBranch { get; set; }
@@ -24,5 +27,9 @@ namespace EntityLayer.Concrete
 
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }
+
+        [ForeignKey(nameof(Classes))]
+        public int ClassId { get; set; }
+        public Classes Class { get; set; }
     }
 }

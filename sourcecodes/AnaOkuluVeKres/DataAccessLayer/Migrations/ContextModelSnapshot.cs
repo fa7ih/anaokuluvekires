@@ -187,6 +187,21 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("EntityLayer.Concrete.Classes", b =>
+                {
+                    b.Property<int>("ClassesId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ClassesName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ClassesId");
+
+                    b.ToTable("Classes");
+                });
+
             modelBuilder.Entity("EntityLayer.Concrete.Contact", b =>
                 {
                     b.Property<int>("ContactId")
@@ -329,8 +344,14 @@ namespace DataAccessLayer.Migrations
                     b.Property<int>("AppUserId")
                         .HasColumnType("int");
 
+                    b.Property<int>("ClassId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("StudentBirth")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("StudentBranch")
                         .HasColumnType("nvarchar(max)");
@@ -356,9 +377,14 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("StudentSurName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<long>("StudentTc")
+                        .HasColumnType("bigint");
+
                     b.HasKey("StudentId");
 
                     b.HasIndex("AppUserId");
+
+                    b.HasIndex("ClassId");
 
                     b.ToTable("Students");
                 });
@@ -406,7 +432,13 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("TeacherBiography")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("TeacherBirth")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("TeacherBranch")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TeacherGender")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TeacherImgUrl")
@@ -415,11 +447,11 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("TeacherNameSurname")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TeacherPassword")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("TeacherStatus")
                         .HasColumnType("bit");
+
+                    b.Property<long>("TeacherTC")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("TeacherUserName")
                         .HasColumnType("nvarchar(max)");
@@ -562,7 +594,15 @@ namespace DataAccessLayer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("EntityLayer.Concrete.Classes", "Class")
+                        .WithMany("Students")
+                        .HasForeignKey("ClassId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("AppUser");
+
+                    b.Navigation("Class");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -617,6 +657,11 @@ namespace DataAccessLayer.Migrations
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.AppUser", b =>
+                {
+                    b.Navigation("Students");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Classes", b =>
                 {
                     b.Navigation("Students");
                 });

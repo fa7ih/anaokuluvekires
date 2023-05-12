@@ -1,0 +1,43 @@
+﻿@model List<Teacher>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Eğitmenlerimiz</h1>
+<br />
+@if (!Model.Any())
+{
+    <h4>Kayıtlı Öğretmeniniz Bulunmamaktadır.</h4>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Kullanıcı Adı</th>
+            <th>Adı Soyadı</th>
+            <th>Branşı</th>
+            <th>Durumu</th>
+            <th>Sil</th>
+            <th>Aktif Et</th>
+            <th>Detay</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.TeacherId</th>
+                <td>@item.TeacherUserName</td>
+                <td>@item.TeacherNameSurname</td>
+                <td>@item.TeacherBranch</td>
+                <td>@item.TeacherStatus</td>
+                <td><a href="/Admin/TeacherAdmin/DeleteTeacher/@item.TeacherId" class="btn btn-outline-danger">Sil</a></td>
+                <td><a href="/Admin/TeacherAdmin/ActiveTeacher/@item.TeacherId" class="btn btn-outline-secondary">Aktif Et</a></td>
+                <td><a href="#" class="btn btn-outline-info">Detay</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Admin/TeacherAdmin/AddTeacher" class="btn btn-outline-primary">Öğretmen Kayıt</a>
+}
+
+

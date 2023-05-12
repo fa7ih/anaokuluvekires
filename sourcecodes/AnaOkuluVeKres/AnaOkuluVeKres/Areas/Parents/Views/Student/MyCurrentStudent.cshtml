@@ -1,0 +1,39 @@
+﻿@model List<Student>
+
+@{
+    ViewData["Title"] = "MyCurrentStudent";
+    Layout = "~/Views/Shared/_ParentLayout.cshtml";
+}
+
+<h1>Aktif Öğrencilerim</h1>
+<br />
+@if (!Model.Any())
+{
+    <h4>Aktif Öğrenciniz Bulunmamaktadır.</h4>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>TC Kimlik Numarası</th>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Doğum Tarihi</th>
+            <th>Cinsiyeti</th>
+            <th>Durumu</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <th>@item.StudentId</th>
+                    <td>@item.StudentTc</td>
+                    <td>@item.StudentName</td>
+                    <td>@item.StudentSurName</td>
+                    <td>@(((DateTime)item.StudentBirth).ToString("dd/MMM/yyyy"))</td>
+                    <td>@item.StudentGender</td>
+                    <td>@item.Status</td>
+                </tr>
+        }
+    </table>
+}
