@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int sayac = 0;
 }
 
 <h1>Eğitmenlerimiz</h1>
@@ -26,18 +27,27 @@ else
         @foreach (var item in Model)
         {
             <tr>
-                <th>@item.TeacherId</th>
+                @{sayac++;}
+                <th>@sayac</th>
                 <td>@item.TeacherUserName</td>
                 <td>@item.TeacherNameSurname</td>
                 <td>@item.TeacherBranch</td>
                 <td>@item.TeacherStatus</td>
-                <td><a href="/Admin/TeacherAdmin/DeleteTeacher/@item.TeacherId" class="btn btn-outline-danger">Sil</a></td>
-                <td><a href="/Admin/TeacherAdmin/ActiveTeacher/@item.TeacherId" class="btn btn-outline-secondary">Aktif Et</a></td>
+                <td>
+                    <form method="post" asp-action="DeleteTeacher">
+                        <input type="hidden" name="id" value="@item.TeacherId" />
+                        <button type="submit" class="btn btn-outline-danger">Pasif Yap</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" asp-action="ActiveTeacher">
+                        <input type="hidden" name="id" value="@item.TeacherId" />
+                        <button type="submit" class="btn btn-outline-success">Aktif Et</button>
+                    </form>
+                </td>
                 <td><a href="#" class="btn btn-outline-info">Detay</a></td>
             </tr>
         }
     </table>
     <a href="/Admin/TeacherAdmin/AddTeacher" class="btn btn-outline-primary">Öğretmen Kayıt</a>
 }
-
-

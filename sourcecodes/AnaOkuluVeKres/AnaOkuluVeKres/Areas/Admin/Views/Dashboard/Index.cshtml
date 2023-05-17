@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!DOCTYPE html>
+<body>
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <div class="layout-page">
+                <div class="content-wrapper">
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <div class="row">
+                            @await Component.InvokeAsync("_DashboardBanner")
+                            @await Component.InvokeAsync("_Cards1Statistic")
+                            @await Component.InvokeAsync("_TotalCard")
+                            @await Component.InvokeAsync("_Cards2Statistic")
+                        </div>
+                        <div class="row">
+                            @await Component.InvokeAsync("_BranchStatistic")
+                            @await Html.PartialAsync("~/Views/AdminLayoutPartial/LinksPartial.cshtml")
+                            @await Component.InvokeAsync("_AdminListTeacher")
+                        </div>
+                    </div>
+
+                    <div class="content-backdrop fade"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    @await Html.PartialAsync("~/Views/AdminLayoutPartial/AdminScriptsPartial.cshtml")
+</body>

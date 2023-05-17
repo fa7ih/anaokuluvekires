@@ -1,0 +1,43 @@
+﻿@model List<Teacher>
+@{
+    ViewData["Title"] = "PassiveTeacher";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int sayac = 0;
+}
+
+<h1>Silinmiş Öğretmen Listesi</h1>
+<br />
+@if (!Model.Any())
+{
+    <h4>Silinmiş Öğretmeniniz Bulunmamaktadır.</h4>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>TC</th>
+            <th>Kullanıcı Adı</th>
+            <th>Adı Soyadı</th>
+            <th>Branşı</th>
+            <th>Doğum Tarihi</th>
+            <th>Detay</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @{
+                    sayac++;
+                }
+                <th>@sayac</th>
+                <td>@item.TeacherTC</td>
+                <td>@item.TeacherUserName</td>
+                <td>@item.TeacherNameSurname</td>
+                <td>@item.TeacherBranch</td>
+                <td>@(((DateTime)item.TeacherBirth).ToString("dd/MMM/yyyy"))</td>
+                <td><a href="#" class="btn btn-outline-info">Detay</a></td>
+            </tr>
+        }
+    </table>
+}
+

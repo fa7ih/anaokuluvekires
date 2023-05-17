@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IClassesDal:IGenericDal<Classes>
+    public interface IClassesDal:IGenericDal<StudentClasses>
     {
     }
 }

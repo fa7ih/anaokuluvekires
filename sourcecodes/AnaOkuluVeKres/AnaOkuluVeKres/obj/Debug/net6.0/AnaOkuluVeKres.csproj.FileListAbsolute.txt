@@ -1,0 +1,8 @@
+C:\Users\Fatih\OneDrive\Masaüstü\AnaOkuluVeKres\AnaOkuluVeKres\obj\Debug\net6.0\AnaOkuluVeKres.csproj.AssemblyReference.cache
+C:\Users\Fatih\OneDrive\Masaüstü\AnaOkuluVeKres\AnaOkuluVeKres\obj\Debug\net6.0\AnaOkuluVeKres.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fatih\OneDrive\Masaüstü\AnaOkuluVeKres\AnaOkuluVeKres\obj\Debug\net6.0\AnaOkuluVeKres.AssemblyInfoInputs.cache
+C:\Users\Fatih\OneDrive\Masaüstü\AnaOkuluVeKres\AnaOkuluVeKres\obj\Debug\net6.0\AnaOkuluVeKres.AssemblyInfo.cs
+C:\Users\Fatih\OneDrive\Masaüstü\AnaOkuluVeKres\AnaOkuluVeKres\obj\Debug\net6.0\AnaOkuluVeKres.csproj.CoreCompileInputs.cache
+C:\Users\Fatih\OneDrive\Masaüstü\AnaOkuluVeKres\AnaOkuluVeKres\obj\Debug\net6.0\AnaOkuluVeKres.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Fatih\OneDrive\Masaüstü\AnaOkuluVeKres\AnaOkuluVeKres\obj\Debug\net6.0\AnaOkuluVeKres.RazorAssemblyInfo.cache
+C:\Users\Fatih\OneDrive\Masaüstü\AnaOkuluVeKres\AnaOkuluVeKres\obj\Debug\net6.0\AnaOkuluVeKres.RazorAssemblyInfo.cs

@@ -22,7 +22,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<Feature> Features { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<Information> Informations { get; set; }
-        public DbSet<Classes> Classes { get; set; }
+        public DbSet<StudentClasses> StudentClasses { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

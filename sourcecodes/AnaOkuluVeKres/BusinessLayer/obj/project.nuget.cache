@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JYWQ9h8waAtHca1ydPd8z7LCsRB9N+bKnR+Sc3QkwDc4PkHLaskESLZdJJCUjz/Y7UCb9a81UukY/4O0ifvFHw==",
+  "dgSpecHash": "9q//9fIoGF3eGNne+BO5nM1nE4SrGNO8hbDEnxEMfOpMIF9oUUgPUQx1lksT55l3xsKD1tE4dKu+OsGZPqxnEA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\BusinessLayer\\BusinessLayer.csproj",
+  "projectFilePath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Fatih\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Fatih\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

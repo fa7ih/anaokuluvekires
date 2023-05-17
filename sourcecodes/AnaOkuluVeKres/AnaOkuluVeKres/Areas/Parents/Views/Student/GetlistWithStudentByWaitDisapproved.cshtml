@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "GetlistWithStudentByWaitDisapproved";
     Layout = "~/Views/Shared/_ParentLayout.cshtml";
+    int sayac = 0;
 }
 
 <h1>Onaylanmayan Öğrencilerim</h1>
@@ -25,7 +26,8 @@ else
         @foreach (var item in Model)
         {
             <tr>
-                <th>@item.StudentId</th>
+                @{sayac++;}
+                <th>@sayac</th>
                 <td>@item.StudentTc</td>
                 <td>@item.StudentName</td>
                 <td>@item.StudentSurName</td>

@@ -1,0 +1,39 @@
+﻿@model List<AppUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int sayac = 0;
+}
+
+<h1>Veli Listesi</h1>
+@if (!Model.Any())
+{
+    <h4>Veli Bulunmamaktadır.</h4>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Ad Soyad</th>
+            <th>Kullanıcı Adı</th>
+            <th>Mail Adresi</th>
+            <th>Kayıt Tarihi</th>
+            <th>Öğrenci Listesi</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @{
+                    sayac++;
+                }
+                <th>@sayac</th>
+                <td>@item.Name @item.Surname</td>
+                <td>@item.UserName</td>
+                <td>@item.Email</td>
+                <td>@(((DateTime)item.RegistrationDate).ToString("dd/MMM/yyyy"))</td>
+                <td><a href="/Admin/ParentAdmin/ParentStudent/@item.Id" class="btn btn-outline-info">Öğrenci</a></td>
+            </tr>
+        }
+    </table>
+}

@@ -1,0 +1,46 @@
+﻿<div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
+    <div class="card">
+        <div class="row row-bordered g-0">
+            <div class="col-md-8">
+                <h5 class="card-header m-0 me-2 pb-3">Son Yılda Kayıt Olan Öğrencilerimiz</h5>
+                <canvas id="studentGraph"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var months = @Html.Raw(Json.Serialize(ViewBag.Months));
+    var enrollments = @Html.Raw(Json.Serialize(ViewBag.Enrollments));
+
+    function createStudentGraph(months, enrollments) {
+        var ctx = document.getElementById('studentGraph').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: months,
+                datasets: [{
+                    label: 'Öğrenci Sayısı',
+                    data: enrollments,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        stepSize: 1
+                    }
+                }
+            }
+        });
+    }
+
+    createStudentGraph(months, enrollments);
+</script>
+
+

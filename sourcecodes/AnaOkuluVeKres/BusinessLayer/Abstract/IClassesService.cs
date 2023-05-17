@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface IClassesService:IGenericService<Classes>
+    public interface IClassesService:IGenericService<StudentClasses>
     {
     }
 }

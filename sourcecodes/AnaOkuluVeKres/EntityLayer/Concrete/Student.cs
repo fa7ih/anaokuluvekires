@@ -19,17 +19,15 @@ namespace EntityLayer.Concrete
         public long StudentTc { get; set; }
         public DateTime StudentBirth { get; set; }
         public string StudentImageUrl { get; set; }
-        public string StudentClass { get; set; }
-        public string StudentBranch { get; set; }
         public string StudentGender { get; set; }
-        public bool StudentStatus { get; set; }
         public string Status { get; set; }
+        public DateTime EnrollmentDate { get; set; }
 
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }
 
-        [ForeignKey(nameof(Classes))]
-        public int ClassId { get; set; }
-        public Classes Class { get; set; }
+        //[ForeignKey(nameof(StudentClasses))]
+        //public int ClassId { get; set; }
+        //public StudentClasses StudentClasses { get; set; }
     }
 }

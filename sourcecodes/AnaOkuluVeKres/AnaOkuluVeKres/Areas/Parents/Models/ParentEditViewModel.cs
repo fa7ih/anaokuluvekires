@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using System;
 
 namespace AnaOkuluVeKres.Areas.Parents.Models
 {
@@ -11,6 +12,7 @@ namespace AnaOkuluVeKres.Areas.Parents.Models
         public string phonenumber { get; set; }
         public string mail { get; set; }
         public string imageurl { get; set; }
+        public DateTime RegistrationDate { get; set; }
         public IFormFile image { get; set; }
     }
 }

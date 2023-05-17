@@ -1,0 +1,19 @@
+﻿@model EntityLayer.Concrete.StudentClasses
+@{
+    ViewData["Title"] = "NewClasses";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Sınıf Ekleyin</h1>
+<br />
+<form method="post">
+    <div class="form-group">
+        <h4>Sınıf Adı</h4>
+        <input type="text" asp-for="ClassesName" class="form-control" />
+    </div>
+    <br />
+    <a href="#" class="btn btn-outline-primary">Sınıflar</a>
+    <br />
+    <br />
+    <button class="btn btn-outline-success">Kayıt Et</button>
+</form>

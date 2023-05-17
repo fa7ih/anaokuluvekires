@@ -1,0 +1,285 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AnaOkuluVeKres
+build_property.RootNamespace = AnaOkuluVeKres
+build_property.ProjectDir = C:\Users\Fatih\OneDrive\Masaüstü\AnaOkuluVeKres\AnaOkuluVeKres\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Fatih\OneDrive\Masaüstü\AnaOkuluVeKres\AnaOkuluVeKres
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Areas/Admin/Views/Classes/ClassesList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2xhc3Nlc1xDbGFzc2VzTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Areas/Admin/Views/Classes/NewClasses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2xhc3Nlc1xOZXdDbGFzc2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Areas/Admin/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Areas/Admin/Views/TeacherAdmin/AddTeacher.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGVhY2hlckFkbWluXEFkZFRlYWNoZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Areas/Admin/Views/TeacherAdmin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGVhY2hlckFkbWluXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Areas/Parents/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFyZW50c1xWaWV3c1xEYXNoYm9hcmRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Areas/Parents/Views/MyProfile/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFyZW50c1xWaWV3c1xNeVByb2ZpbGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Areas/Parents/Views/StudentProfile/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFyZW50c1xWaWV3c1xTdHVkZW50UHJvZmlsZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Areas/Parents/Views/Student/GetlistWithStudentByWaitDisapproved.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFyZW50c1xWaWV3c1xTdHVkZW50XEdldGxpc3RXaXRoU3R1ZGVudEJ5V2FpdERpc2FwcHJvdmVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Areas/Parents/Views/Student/MyApprovalStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFyZW50c1xWaWV3c1xTdHVkZW50XE15QXBwcm92YWxTdHVkZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Areas/Parents/Views/Student/MyCurrentStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFyZW50c1xWaWV3c1xTdHVkZW50XE15Q3VycmVudFN0dWRlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Areas/Parents/Views/Student/NewStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFyZW50c1xWaWV3c1xTdHVkZW50XE5ld1N0dWRlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Areas/Parents/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFyZW50c1xWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/About/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/AdminLayoutPartial/AdminScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5MYXlvdXRQYXJ0aWFsXEFkbWluU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/AdminLayoutPartial/FooterPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5MYXlvdXRQYXJ0aWFsXEZvb3RlclBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/AdminLayoutPartial/HeaderPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5MYXlvdXRQYXJ0aWFsXEhlYWRlclBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/AdminLayoutPartial/LinksPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5MYXlvdXRQYXJ0aWFsXExpbmtzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/AdminLayoutPartial/NavbarPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5MYXlvdXRQYXJ0aWFsXE5hdmJhclBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/AdminLayoutPartial/ScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5MYXlvdXRQYXJ0aWFsXFNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Contact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Default/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/LayoutPartial/BeginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGF5b3V0UGFydGlhbFxCZWdpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/LayoutPartial/ChoicePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGF5b3V0UGFydGlhbFxDaG9pY2VQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/LayoutPartial/ContactPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGF5b3V0UGFydGlhbFxDb250YWN0UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/LayoutPartial/FooterPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGF5b3V0UGFydGlhbFxGb290ZXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/LayoutPartial/HeaderPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGF5b3V0UGFydGlhbFxIZWFkZXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/LayoutPartial/NavBarPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGF5b3V0UGFydGlhbFxOYXZCYXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/LayoutPartial/ScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGF5b3V0UGFydGlhbFxTY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Login/SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2lnbkluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Login/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2lnblVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/ParentLayoutPartial/FooterPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50TGF5b3V0UGFydGlhbFxGb290ZXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/ParentLayoutPartial/HeaderPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50TGF5b3V0UGFydGlhbFxIZWFkZXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/ParentLayoutPartial/Navbar2Partial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50TGF5b3V0UGFydGlhbFxOYXZiYXIyUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/ParentLayoutPartial/NavbarPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50TGF5b3V0UGFydGlhbFxOYXZiYXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/ParentLayoutPartial/RightbarPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50TGF5b3V0UGFydGlhbFxSaWdodGJhclBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/ParentLayoutPartial/ScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50TGF5b3V0UGFydGlhbFxTY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Components/_About/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0Fib3V0XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Components/_AdminListTeacher/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0FkbWluTGlzdFRlYWNoZXJcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Components/_BranchStatistic/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0JyYW5jaFN0YXRpc3RpY1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Components/_Cards1Statistic/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0NhcmRzMVN0YXRpc3RpY1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Components/_Cards2Statistic/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0NhcmRzMlN0YXRpc3RpY1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Components/_Classes/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0NsYXNzZXNcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Components/_DashboardBanner/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0Rhc2hib2FyZEJhbm5lclxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Components/_Feature/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0ZlYXR1cmVcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Components/_HomeAbout/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0hvbWVBYm91dFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Components/_HomeTeacher/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0hvbWVUZWFjaGVyXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Components/_Information/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0luZm9ybWF0aW9uXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Components/_ProfileInformation/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1Byb2ZpbGVJbmZvcm1hdGlvblxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Components/_Statistics/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1N0YXRpc3RpY3NcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Components/_SubContact/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1N1YkNvbnRhY3RcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Components/_TeacherList/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1RlYWNoZXJMaXN0XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Components/_Teacher/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1RlYWNoZXJcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Components/_Testimonial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1Rlc3RpbW9uaWFsXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Components/_TotalCard/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1RvdGFsQ2FyZFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/_ParentLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJlbnRMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/_UıLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9VxLFMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/Teacher/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fatih/OneDrive/Masaüstü/AnaOkuluVeKres/AnaOkuluVeKres/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

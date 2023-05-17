@@ -7011,11 +7011,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\BusinessLayer\\BusinessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\BusinessLayer\\BusinessLayer.csproj",
       "projectName": "BusinessLayer",
-      "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\BusinessLayer\\BusinessLayer.csproj",
+      "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\BusinessLayer\\BusinessLayer.csproj",
       "packagesPath": "C:\\Users\\Fatih\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\BusinessLayer\\obj\\",
+      "outputPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\BusinessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages"
@@ -7037,11 +7037,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\DataAccessLayer\\DataAccessLayer.csproj"
+            "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\DataAccessLayer\\DataAccessLayer.csproj"
             },
-            "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj": {
-              "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj"
+            "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj": {
+              "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj"
             }
           }
         }

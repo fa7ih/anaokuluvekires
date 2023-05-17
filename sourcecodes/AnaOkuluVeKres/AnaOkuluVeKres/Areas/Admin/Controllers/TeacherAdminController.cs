@@ -6,14 +6,19 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
 using System;
+using AnaOkuluVeKres.ViewComponents.Default;
+using DataAccessLayer.Concrete;
+using System.Linq;
 
 namespace AnaOkuluVeKres.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Route("Admin/[controller]/[action]")]
     [AllowAnonymous]
     public class TeacherAdminController : Controller
     {
         TeacherManager teacherManager = new TeacherManager(new EfTeacherDal());
+        Context context = new Context();
         public IActionResult Index()
         {
             var values = teacherManager.GetList();
@@ -22,19 +27,18 @@ namespace AnaOkuluVeKres.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult DeleteTeacher(int id)
         {
-            var value = teacherManager.TGetById(id);
-            value.TeacherStatus = false;
-            teacherManager.TUpdate(value);
-            return RedirectToAction("Index");
+            var teacher = teacherManager.TGetById(id);
+            teacher.TeacherStatus = false; 
+            teacherManager.TUpdate(teacher);
+            return RedirectToAction("Index", new { id = teacher.TeacherId });
         }
-
         [HttpPost]
         public IActionResult ActiveTeacher(int id)
         {
-            var value = teacherManager.TGetById(id);
-            value.TeacherStatus = true;
-            teacherManager.TUpdate(value);
-            return RedirectToAction("Index", "TeacherAdmin");
+            var teacher = teacherManager.TGetById(id);
+            teacher.TeacherStatus = true;
+            teacherManager.TUpdate(teacher);
+            return RedirectToAction("Index", new { id = teacher.TeacherId });
         }
         [HttpGet]
         public IActionResult AddTeacher()
@@ -48,12 +52,13 @@ namespace AnaOkuluVeKres.Areas.Admin.Controllers
             Teacher teacher = new Teacher();
             if (teacher.TeacherImgUrl != null)
             {
-                var extensions = Path.GetExtension(teacherAdd.teacherImgUrl.FileName);
-                var newImageName = Guid.NewGuid() + extensions;
-                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/TeacherImages/", newImageName);
-                var stream = new FileStream(location, FileMode.Create);
+                var resource = Directory.GetCurrentDirectory();
+                var extansion = Path.GetExtension(teacherAdd.teacherImgUrl.FileName);
+                var imageName = Guid.NewGuid() + extansion;
+                var saveLocation = resource + "/wwwroot/TeacherImages/" + imageName;
+                var stream = new FileStream(saveLocation, FileMode.Create);
                 teacherAdd.teacherImgUrl.CopyTo(stream);
-                teacher.TeacherImgUrl = newImageName;
+                teacher.TeacherImgUrl = imageName;
             }
             teacher.TeacherUserName = teacherAdd.teacherUserName;
             teacher.TeacherNameSurname = teacherAdd.teacherNameSurname;
@@ -64,7 +69,21 @@ namespace AnaOkuluVeKres.Areas.Admin.Controllers
             teacher.TeacherBiography = teacherAdd.teacherBiography;
             teacher.TeacherStatus = true;
             teacherManager.TAdd(teacher);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "TeacherAdmin");
+        }
+        public IActionResult ActiveTeacher() 
+        {
+            var teachers = context.Teachers.Where(t => t.TeacherStatus == true).ToList();
+            return View(teachers);
+        }
+        public IActionResult PassiveTeacher() 
+        {
+            var teachers = context.Teachers.Where(t => t.TeacherStatus == false).ToList();
+            return View(teachers);
+        }
+        public IActionResult TeacherDetails()
+        {
+            return View();
         }
     }
 }

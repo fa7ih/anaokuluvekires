@@ -161,6 +161,9 @@ namespace DataAccessLayer.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<DateTime>("RegistrationDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -347,17 +350,14 @@ namespace DataAccessLayer.Migrations
                     b.Property<int>("ClassId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("EnrollmentDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("StudentBirth")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("StudentBranch")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("StudentClass")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StudentGender")
                         .HasColumnType("nvarchar(max)");
@@ -370,9 +370,6 @@ namespace DataAccessLayer.Migrations
 
                     b.Property<int>("StudentNo")
                         .HasColumnType("int");
-
-                    b.Property<bool>("StudentStatus")
-                        .HasColumnType("bit");
 
                     b.Property<string>("StudentSurName")
                         .HasColumnType("nvarchar(max)");

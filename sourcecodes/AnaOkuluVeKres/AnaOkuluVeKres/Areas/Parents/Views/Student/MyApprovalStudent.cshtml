@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "MyApprovalStudent";
     Layout = "~/Views/Shared/_ParentLayout.cshtml";
+    int sayac = 0;
 }
 
 <h1>Kayıt Onayı Bekleyen Öğrencilerim</h1>
@@ -24,15 +25,18 @@ else
         </tr>
         @foreach (var item in Model)
         {
-                <tr>
-                    <th>@item.StudentId</th>
-                    <td>@item.StudentTc</td>
-                    <td>@item.StudentName</td>
-                    <td>@item.StudentSurName</td>
-                    <td>@(((DateTime)item.StudentBirth).ToString("dd/MMM/yyyy"))</td>
-                    <td>@item.StudentGender</td>
-                    <td>@item.Status</td>
-                </tr>
+            <tr>
+                @{
+                    sayac++;
+                }
+                <th>@sayac</th>
+                <td>@item.StudentTc</td>
+                <td>@item.StudentName</td>
+                <td>@item.StudentSurName</td>
+                <td>@(((DateTime)item.StudentBirth).ToString("dd/MMM/yyyy"))</td>
+                <td>@item.StudentGender</td>
+                <td>@item.Status</td>
+            </tr>
         }
     </table>
 }

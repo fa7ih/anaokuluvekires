@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\AnaOkuluVeKres\\AnaOkuluVeKres.csproj": {}
+    "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\AnaOkuluVeKres\\AnaOkuluVeKres.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\AnaOkuluVeKres\\AnaOkuluVeKres.csproj": {
+    "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\AnaOkuluVeKres\\AnaOkuluVeKres.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\AnaOkuluVeKres\\AnaOkuluVeKres.csproj",
+        "projectUniqueName": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\AnaOkuluVeKres\\AnaOkuluVeKres.csproj",
         "projectName": "AnaOkuluVeKres",
-        "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\AnaOkuluVeKres\\AnaOkuluVeKres.csproj",
+        "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\AnaOkuluVeKres\\AnaOkuluVeKres.csproj",
         "packagesPath": "C:\\Users\\Fatih\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\AnaOkuluVeKres\\obj\\",
+        "outputPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\AnaOkuluVeKres\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages"
@@ -33,14 +33,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\BusinessLayer\\BusinessLayer.csproj": {
-                "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\BusinessLayer\\BusinessLayer.csproj"
+              "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\BusinessLayer\\BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\BusinessLayer\\BusinessLayer.csproj"
               },
-              "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\DataAccessLayer\\DataAccessLayer.csproj"
+              "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\DataAccessLayer\\DataAccessLayer.csproj"
               },
-              "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj"
+              "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj": {
+                "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj"
               }
             }
           }
@@ -111,14 +111,14 @@
         }
       }
     },
-    "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\BusinessLayer\\BusinessLayer.csproj": {
+    "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\BusinessLayer\\BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\BusinessLayer\\BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\BusinessLayer\\BusinessLayer.csproj",
+        "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\BusinessLayer\\BusinessLayer.csproj",
         "packagesPath": "C:\\Users\\Fatih\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\BusinessLayer\\obj\\",
+        "outputPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages"
@@ -140,11 +140,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\DataAccessLayer\\DataAccessLayer.csproj"
+              "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\DataAccessLayer\\DataAccessLayer.csproj"
               },
-              "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj"
+              "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj": {
+                "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj"
               }
             }
           }
@@ -200,14 +200,14 @@
         }
       }
     },
-    "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\DataAccessLayer\\DataAccessLayer.csproj",
         "packagesPath": "C:\\Users\\Fatih\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\DataAccessLayer\\obj\\",
+        "outputPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages"
@@ -229,8 +229,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj"
+              "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj": {
+                "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj"
               }
             }
           }
@@ -294,14 +294,14 @@
         }
       }
     },
-    "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj": {
+    "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj",
         "projectName": "EntityLayer",
-        "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj",
+        "projectPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\EntityLayer\\EntityLayer.csproj",
         "packagesPath": "C:\\Users\\Fatih\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\ProjectAnaOkuluVeKres\\AnaOkuluVeKres\\EntityLayer\\obj\\",
+        "outputPath": "C:\\Users\\Fatih\\OneDrive\\Masaüstü\\AnaOkuluVeKres\\EntityLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages"

@@ -18,27 +18,27 @@ namespace BusinessLayer.Concrete
             _classesDal = classesDal;
         }
 
-        public List<Classes> GetList()
+        public List<StudentClasses> GetList()
         {
             return _classesDal.GetList();
         }
 
-        public void TAdd(Classes t)
+        public void TAdd(StudentClasses t)
         {
             _classesDal.Insert(t);
         }
 
-        public void TDelete(Classes t)
+        public void TDelete(StudentClasses t)
         {
             _classesDal.Delete(t);
         }
 
-        public Classes TGetById(int id)
+        public StudentClasses TGetById(int id)
         {
             return _classesDal.GetById(id);
         }
 
-        public void TUpdate(Classes t)
+        public void TUpdate(StudentClasses t)
         {
             _classesDal.Update(t);
         }
