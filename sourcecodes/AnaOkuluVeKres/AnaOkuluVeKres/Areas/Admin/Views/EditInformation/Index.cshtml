@@ -1,0 +1,22 @@
+﻿@model EntityLayer.Concrete.Information
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>İletişim Bilgilerimiz</h1>
+<br />
+@using (Html.BeginForm("Index", "EditInformation", FormMethod.Post))
+{
+    <h4>Adresimiz: </h4>
+    @Html.TextBoxFor(x=>x.InformationAdress,new {@class ="form-control"})
+    <br />
+    <h4>Telefon Numaramız: </h4>
+    @Html.TextBoxFor(x=>x.InformationPhone,new {@class ="form-control"})
+    <br />
+    <h4>Mailimiz: </h4>
+    @Html.TextBoxFor(x=>x.InformationMail,new {@class ="form-control"})
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+}

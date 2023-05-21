@@ -1,0 +1,39 @@
+﻿@model AnaOkuluVeKres.Areas.Admin.Models.AssignRoleViewModel
+
+@{
+    ViewData["Title"] = "AssignRoles";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Öğretmene Rol Atama Sayfası</h1>
+<hr />
+<h4>Öğretmen: @Model.TeacherNameSurname</h4>
+
+@if (!string.IsNullOrEmpty(TempData["Message"] as string))
+{
+        <div class="alert alert-info" role="alert">
+        @TempData["Message"]
+        </div>
+}
+
+@using (Html.BeginForm("AssignRoles", "Role", FormMethod.Post))
+{
+        <select asp-for="SelectedRoleId" class="form-control">
+            <option value="">Rol Seçin:</option>
+        @foreach (var role in Model.Roles)
+        {
+                    <option value="@role.Value">@role.Text</option>
+        }
+        </select>
+
+        <input type="hidden" name="TeacherId" value="@Model.TeacherId" />
+        <br />
+        <hr />
+    <button type="submit" class="btn btn-outline-primary">Role Ata</button>
+    <span style="margin-right: 10px;"></span>
+    <a href="/Admin/Role/TeacherList/" class="btn btn-outline-success">Rol Atama Listesine Dön</a>
+    <span style="margin-right: 10px;"></span>
+    <a href="/Admin/Role/TeacherAssignRolesList/" class="btn btn-outline-info">Rol Listesine Git</a>
+}
+
+

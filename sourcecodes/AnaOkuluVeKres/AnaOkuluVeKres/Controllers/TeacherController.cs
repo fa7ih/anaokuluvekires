@@ -3,10 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AnaOkuluVeKres.Controllers
 {
-    
+    [AllowAnonymous]
     public class TeacherController : Controller
     {
-        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();

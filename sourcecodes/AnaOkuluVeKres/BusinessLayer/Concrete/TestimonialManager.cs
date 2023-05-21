@@ -18,6 +18,7 @@ namespace BusinessLayer.Concrete
             _testimonialDal = testimonialDal;
         }
 
+
         public List<Testimonial> GetList()
         {
             return _testimonialDal.GetList();
@@ -35,7 +36,7 @@ namespace BusinessLayer.Concrete
 
         public Testimonial TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _testimonialDal.GetById(id);
         }
 
         public void TUpdate(Testimonial t)

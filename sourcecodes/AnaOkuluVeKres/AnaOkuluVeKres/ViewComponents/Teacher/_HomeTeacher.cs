@@ -1,15 +1,17 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace AnaOkuluVeKres.ViewComponents.Teacher
 {
     public class _HomeTeacher:ViewComponent
     {
-        TeacherManager teacherManager = new TeacherManager(new EfTeacherDal());
+        Context context = new Context();
         public IViewComponentResult Invoke()
         {
-            var values = teacherManager.GetList();
+            var values = context.Teachers.Where(t => t.TeacherStatus == true).ToList();
             return View(values);
         }
     }

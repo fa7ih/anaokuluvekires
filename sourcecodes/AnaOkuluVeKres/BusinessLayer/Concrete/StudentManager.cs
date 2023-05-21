@@ -50,7 +50,7 @@ namespace BusinessLayer.Concrete
 
         public Student TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _studentDal.GetById(id);
         }
 
         public void TUpdate(Student t)

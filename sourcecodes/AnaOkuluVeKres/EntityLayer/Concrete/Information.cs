@@ -12,6 +12,5 @@ namespace EntityLayer.Concrete
         public string InformationAdress { get; set; }
         public string InformationPhone { get; set; }
         public string InformationMail { get; set; }
-        public bool InformationStatus { get; set; }
     }
 }

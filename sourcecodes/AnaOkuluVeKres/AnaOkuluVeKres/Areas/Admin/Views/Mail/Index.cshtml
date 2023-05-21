@@ -1,0 +1,24 @@
+﻿@model AnaOkuluVeKres.Models.MailRequest
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Mail Sayfası</h1>
+<hr />
+<form method="post">
+    <div class="form-group">
+        <h5>Alıcı Mail Adresi</h5>
+        <input type="text" asp-for="ReciverMail" class="form-control" maxlength="11" />
+    </div>
+    <br />
+    <div class="form-group">
+        <h5>Konu Başlığı</h5>
+        <input type="text" asp-for="Subject" class="form-control" maxlength="11" />
+    </div>
+    <br />
+    <button class="btn btn-outline-success">Mail Gönder</button>
+</form>
+
+
+

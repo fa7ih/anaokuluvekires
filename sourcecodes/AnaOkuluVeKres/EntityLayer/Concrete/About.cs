@@ -15,6 +15,5 @@ namespace EntityLayer.Concrete
         public string AboutSubDescription1 { get; set; }
         public string AboutSubDescription2 { get; set; }
         public string AboutSubDescription3 { get; set; }
-        public bool AboutStatus { get; set; }
     }
 }

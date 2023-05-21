@@ -9,6 +9,9 @@ namespace EntityLayer.Concrete
 {
     public class AppRole:IdentityRole<int>
     {
-
+        public int AppRoleId { get; set; }
+        public string RoleName { get; set; }
+        public ICollection<AppRoleTeacher> AppRoleTeachers { get; set; }
     }
 }
+

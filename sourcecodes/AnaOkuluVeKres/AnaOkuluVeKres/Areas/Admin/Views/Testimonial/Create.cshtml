@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Concrete.Testimonial
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Düşünür Ekle</h1>
+
+<hr />
+
+<form method="post">
+    <div class="form-group">
+        <h5>Düşünür Adı Soyadı</h5>
+        <input type="text" asp-for="TestimonialNameSurname" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <h5>Düşünürün Düşüncesi</h5>
+        <textarea cols="30" rows="5" class="form-control" asp-for="TestimonialDescription"></textarea>
+    </div>
+    <br />
+    <div class="form-group">
+        <h4>Resim Seçin</h4>
+        <input type="file" name="imageFile" class="form-control" />
+    </div>
+    <br />
+    <button class="btn btn-outline-success">Kayıt Et</button>
+</form>
+

@@ -1,16 +1,18 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace AnaOkuluVeKres.ViewComponents.Default
 {
     public class _Testimonial:ViewComponent
     {
-        TestimonialManager testimonialManager = new TestimonialManager(new EfTestimonialDal());
+        Context context = new Context();
         public IViewComponentResult Invoke()
         {
-            var values = testimonialManager.GetList();
-            return View(values);
+            var value = context.Testimonials.Where(t => t.TestimonialImageStatus == true).ToList();
+            return View(value);
         }
     }
 }

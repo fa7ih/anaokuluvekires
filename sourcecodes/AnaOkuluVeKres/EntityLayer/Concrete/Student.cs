@@ -23,11 +23,11 @@ namespace EntityLayer.Concrete
         public string Status { get; set; }
         public DateTime EnrollmentDate { get; set; }
 
+
+        [ForeignKey(nameof(AppUser))]
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }
 
-        //[ForeignKey(nameof(StudentClasses))]
-        //public int ClassId { get; set; }
-        //public StudentClasses StudentClasses { get; set; }
+        public virtual StudentStatus StudentStatus { get; set; }
     }
 }

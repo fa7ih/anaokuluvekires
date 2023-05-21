@@ -1,0 +1,20 @@
+﻿@model EntityLayer.Concrete.About2
+
+@{
+    ViewData["Title"] = "Index2";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>2.Hakkımda Kısmı</h1>
+<hr />
+@using (Html.BeginForm("Index2", "AboutAdmin", FormMethod.Post))
+{
+    <h4>Hakkımda Başlığı: </h4>
+    @Html.TextBoxFor(x=>x.AboutTitle,new {@class ="form-control"})
+    <br />
+    <h4>Açıklaması: </h4>
+    @Html.TextAreaFor(x=>x.About2Description,5,4,new {@class ="form-control"})
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+}
+

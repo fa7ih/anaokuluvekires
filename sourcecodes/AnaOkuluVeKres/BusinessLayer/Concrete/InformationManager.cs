@@ -35,7 +35,7 @@ namespace BusinessLayer.Concrete
 
         public Information TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _ınformationDal.GetById(id);
         }
 
         public void TUpdate(Information t)

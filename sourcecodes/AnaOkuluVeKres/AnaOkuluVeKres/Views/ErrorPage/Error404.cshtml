@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewData["Title"] = "Error404";
+    Layout = "~/Views/Shared/_UıLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Error 404 - Aradığınız Sayfa Bulunamadı!</title>
+
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="~/starter/css/style.css" type="text/css" media="all" />
+
+</head>
+
+<body>
+    <div class="w3l-loginblock signinform">
+
+        <section class="w3l-errorblock text-center">
+            <div class="container">
+                <div class="main-cover w3">
+                    <h4 class="cover-para w3ls">404</h4>
+                    <h5 class="error">Üzgünüz, O Sayfayı Bulamıyoruz!</h5>
+                    <p class="">
+                        Aradığınız sayfa taşınmış, kaldırılmış, yeniden adlandırılmış veya hiç var olmamış.
+                    </p>
+                    <a href="/Default/Index/" class="btn back-button"> <span class="fa fa-arrow-left mr-2"></span> Anasayfaya geri dön</a>
+                </div>
+            </div>
+        </section>
+        <!-- //404-->
+        <!-- //main content -->
+        <!-- footer -->
+        <div class="footer">
+            <p>
+                @DateTime.Now.Year FEKreş Anaokulu ve Kreş | Tüm haları saklıdır.
+            </p>
+        </div>
+        <!-- footer -->
+    </div>
+
+    <!-- fontawesome v5-->
+    <script src="~/starter/js/fontawesome.js"></script>
+
+</body>
+
+</html>
+

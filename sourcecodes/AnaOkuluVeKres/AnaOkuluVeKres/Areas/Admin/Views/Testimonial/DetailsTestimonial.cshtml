@@ -1,0 +1,24 @@
+﻿@model EntityLayer.Concrete.Testimonial
+@{
+    ViewData["Title"] = "DetailsTestimonial";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>@Model.TestimonialNameSurname Düşünürünün Bilgisi</h1>
+<hr />
+<img src="@Url.Content(Model.TestimonialImageUrl)" />
+<hr />
+@using (Html.BeginForm("DetailsTestimonial", "Testimonial", FormMethod.Post))
+{
+    <div class="form-group">
+        <h4>Düşünürün Adı Soyadı: </h4>
+        @Html.TextBoxFor(x => x.TestimonialNameSurname, new { @class = "form-control" })
+    </div>
+    <br />
+    <div class="form-group">
+        <h4>Düşünürün Açıklaması: </h4>
+        @Html.TextAreaFor(x => x.TestimonialDescription, new { @class = "form-control", rows = "5" })
+    </div>
+    <br />
+    <button type="submit" class="btn btn-outline-success">Güncelle</button>
+}

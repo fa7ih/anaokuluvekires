@@ -1,0 +1,52 @@
+﻿@model AnaOkuluVeKres.Areas.Admin.Models.AssignRoleListViewModel
+@{
+    ViewData["Title"] = "TeacherAssignRolesList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<h1>Öğretmen Rolleri</h1>
+<hr />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Öğretmen</th>
+            <th>Rolü</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var teacher in Model.Teachers)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@teacher.TeacherNameSurname</td>
+                <td>
+                    @if (Model.AssignedRolesByTeacher.ContainsKey(teacher.TeacherId))
+                    {
+                        var assignedRoles = Model.AssignedRolesByTeacher[teacher.TeacherId];
+                        if (assignedRoles.Count > 0)
+                        {
+                            foreach (var roleName in assignedRoles)
+                            {
+                                <span>@roleName</span>
+                                <br />
+                            }
+                        }
+                        else
+                        {
+                            <span>Rolü Yok</span>
+                        }
+                    }
+                    else
+                    {
+                        <span>Rolü Yok</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<hr />
+<a href="/Admin/Role/TeacherList/" class="btn btn-outline-success">Rol Atama Listesine Git</a>

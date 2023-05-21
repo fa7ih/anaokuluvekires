@@ -1,0 +1,61 @@
+﻿@model List<Testimonial>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int sayac = 0;
+}
+
+<h1>Düşünür Verileri</h1>
+<h6>Durumu True Olan ilk üç düşünür kullanıcıya gözükecektir</h6>
+<hr />
+@if (!Model.Any())
+{
+    <h4>Kayıtlı Düşünür Bulunmamaktadır.</h4>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Adı Soyadı</th>
+            <th>Durumu</th>
+            <th>Sil</th>
+            <th>Aktif Et</th>
+            <th>Düzenle/Detaylar</th>
+            <th>Kalıcı Sil</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @{
+                    sayac++;
+                }
+                <th>@sayac</th>
+                <td>@item.TestimonialNameSurname</td>
+                <td>@item.TestimonialImageStatus</td>
+                <td>
+                    <form method="post" asp-action="PassiveTestimonials">
+                        <input type="hidden" name="id" value="@item.TestimonialId" />
+                        <button type="submit" class="btn btn-outline-danger">Pasif Yap</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" asp-action="ActiveTestimonials">
+                        <input type="hidden" name="id" value="@item.TestimonialId" />
+                        <button type="submit" class="btn btn-outline-success">Aktif Et</button>
+                    </form>
+                </td>
+                <td><a href="@Url.Action("DetailsTestimonial", "Testimonial", new { area = "Admin", id = item.TestimonialId })" class="btn btn-outline-info">Düzenle/Detaylar</a></td>
+                <td>
+                    <form method="post" action="@Url.Action("Delete", "Testimonial", new { area = "Admin", id = item.TestimonialId })" onsubmit="return confirm('Bu düşünürü silmek istediğinizden emin misiniz?');">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-outline-danger">Sil</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+    <a href="/Admin/Testimonial/Create" class="btn btn-outline-primary">Düşünür Girişi</a>
+}
+
+

@@ -19,8 +19,12 @@ namespace BusinessLayer.Container
             services.AddScoped<IAppUserDal, EfAppUserDal>();
             services.AddScoped<IStudentService, StudentManager>();
             services.AddScoped<IStudentDal, EfStudentDal>();
-            //services.AddScoped<IClassesService, ClassesManager>();
-            //services.AddScoped<IClassesDal, EfClassesDal>();
+            //services.AddScoped<IInformationService, InformationManager>();
+            //services.AddScoped<IInformationDal, EfInformationDal>();
+            //services.AddScoped<ITestimonialService, TestimonialManager>();
+            //services.AddScoped<ITestimonialDal, EfTestimonialDal>();
+            //services.AddScoped<ITeacherService, TeacherManager>();
+            //services.AddScoped<ITeacherDal, EfTeacherDal>();
         }
     }
 }

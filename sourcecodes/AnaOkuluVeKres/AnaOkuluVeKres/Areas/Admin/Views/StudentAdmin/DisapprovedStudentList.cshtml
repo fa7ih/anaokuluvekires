@@ -1,0 +1,50 @@
+﻿@model List<Student>
+
+@{
+    ViewData["Title"] = "DisapprovedStudentList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int sayac = 0;
+}
+
+<h1>Onaylanmayan Öğrenciler</h1>
+<br />
+@if (!Model.Any())
+{
+    <h4>Onaylanmayan Öğrenci Bulunmamaktadır.</h4>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>TC Kimlik Numarası</th>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Doğum Tarihi</th>
+            <th>Cinsiyeti</th>
+            <th>Durumu</th>
+            <th>Onayla</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @{
+                    sayac++;
+                }
+                <th>@sayac</th>
+                <td>@item.StudentTc</td>
+                <td>@item.StudentName</td>
+                <td>@item.StudentSurName</td>
+                <td>@(((DateTime)item.StudentBirth).ToString("dd/MMM/yyyy"))</td>
+                <td>@item.StudentGender</td>
+                <td>@item.Status</td>
+                <td>
+                    <form method="post" asp-action="ApprovalStudent">
+                        <input type="hidden" name="id" value="@item.StudentId" />
+                        <button type="submit" class="btn btn-outline-success">Onayla</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+}

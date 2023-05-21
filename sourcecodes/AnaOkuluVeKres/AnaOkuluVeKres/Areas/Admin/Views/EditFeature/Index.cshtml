@@ -1,0 +1,39 @@
+﻿@model EntityLayer.Concrete.Feature
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "EditFeature", FormMethod.Post))
+{
+    <h4>Alan Başlığı: </h4>
+    @Html.TextBoxFor(x=>x.FeatureHeadTitle,new {@class ="form-control"})
+    <br />
+    <h4>1.Özellik Başlığı: </h4>
+    @Html.TextBoxFor(x=>x.FeatureTitle1,new {@class ="form-control"})
+    <br />
+    <h4>Açıklaması: </h4>
+    @Html.TextBoxFor(x=>x.FeatureDescription1,new {@class ="form-control"})
+    <br />
+    <h4>2.Özellik Başlığı: </h4>
+    @Html.TextBoxFor(x=>x.FeatureTitle2,new {@class ="form-control"})
+    <br />
+    <h4>Açıklaması: </h4>
+    @Html.TextBoxFor(x=>x.FeatureDescription2,new {@class ="form-control"})
+    <br />
+    <h4>3.Özellik Başlığı: </h4>
+    @Html.TextBoxFor(x=>x.FeatureTitle3,new {@class ="form-control"})
+    <br />
+    <h4>Açıklaması: </h4>
+    @Html.TextBoxFor(x=>x.FeatureDescription3,new {@class ="form-control"})
+    <br />
+    <h4>4.Özellik Başlığı: </h4>
+    @Html.TextBoxFor(x=>x.FeatureTitle4,new {@class ="form-control"})
+    <br />
+    <h4>Açıklaması: </h4>
+    @Html.TextBoxFor(x=>x.FeatureDescription4,new {@class ="form-control"})
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+}
+
