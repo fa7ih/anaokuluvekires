@@ -1,4 +1,6 @@
-﻿@model List<AppUser>
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<AppUser>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -32,8 +34,15 @@ else
                 <td>@item.UserName</td>
                 <td>@item.Email</td>
                 <td>@(((DateTime)item.RegistrationDate).ToString("dd/MMM/yyyy"))</td>
-                <td><a href="/Admin/ParentAdmin/ParentStudent/@item.Id" class="btn btn-outline-info">Öğrenci</a></td>
+                <td>
+                    <form method="post" asp-action="ParentStudent">
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <button type="submit" class="btn btn-outline-info">Detay</button>
+                    </form>
+                </td>
             </tr>
         }
     </table>
+    @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}))
 }
+<td>

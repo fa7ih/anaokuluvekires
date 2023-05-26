@@ -18,7 +18,5 @@ namespace AnaOkuluVeKres.Models
         [Required(ErrorMessage = "Lütfen şifreyi onaylayın")]
         [Compare("Password",ErrorMessage ="Şifreler Uyumlu Değil")]
         public string ConfirmPassword { get; set; }
-
-        //public Student Student { get; set; }
     }
 }

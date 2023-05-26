@@ -1,0 +1,60 @@
+﻿@model AnaOkuluVeKres.Models.TeacherLoginViewModel
+@{
+    ViewData["Title"] = "SignIn";
+    Layout = "~/Views/Shared/_UıLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' media="all">
+
+</head>
+<body>
+    <div class="mid-class">
+        <div class="art-right-w3ls">
+            <h2>Öğretmen Giriş Sayfası</h2>
+            <form method="post">
+                <div class="main">
+                    <div class="form-left-to-w3l">
+                        <input type="text" asp-for="username" placeholder="Kullanıcı adı" required="">
+                        <span asp-validation-for="username"></span>
+                    </div>
+                    <div class="form-left-to-w3l ">
+                        <input type="password" asp-for="password" placeholder="Şifre" required="">
+                        <span asp-validation-for="password"></span>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="left-side-forget">
+                    <input type="checkbox" class="checked">
+                    <span class="remenber-me">Beni Hatırla </span>
+                </div>
+                <div class="right-side-forget">
+                    <a href="/PasswordChange/ForgetPassword" class="for">Parolanızı Mı Unuttunuz...?</a>
+                </div>
+                <div class="clear"></div>
+                <div class="btnn">
+                    <button type="submit">Giriş Yap</button>
+                </div>
+                @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"] as string))
+                {
+                    <div class="error-message">@ViewData["ErrorMessage"]</div>
+                }
+            </form>
+            <div class="w3layouts_more-buttn">
+                <h3>
+                    Bizimle Çalışmak İstermisiniz..?
+                    <a href="/Contact/Index/">
+                        Bizimle İletişime Geçin
+                    </a>
+                </h3>
+                <hr />
+                <span>Bize kullandığınız gmail hesabınızla Detaylı özgeçmişinizi gönderin. Şartlarımız uyarsa, geçici kullanıcı adı ve şifrenizi mail olarak göndereceğiz...</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -4,17 +4,26 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Yeni Mail Sayfası</h1>
+<h1>Mail Gönder</h1>
 <hr />
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
 <form method="post">
     <div class="form-group">
         <h5>Alıcı Mail Adresi</h5>
-        <input type="text" asp-for="ReciverMail" class="form-control" maxlength="11" />
+        <input type="email" asp-for="ReciverMail" class="form-control"  />
     </div>
     <br />
     <div class="form-group">
         <h5>Konu Başlığı</h5>
-        <input type="text" asp-for="Subject" class="form-control" maxlength="11" />
+        <input type="text" asp-for="Subject" class="form-control"  />
+    </div>
+    <br />
+    <div class="form-group">
+        <h5>Mesaj İçeriği</h5>
+        <textarea cols="30" rows="5" asp-for="Body" class="form-control" ></textarea>
     </div>
     <br />
     <button class="btn btn-outline-success">Mail Gönder</button>

@@ -1,5 +1,5 @@
 ﻿@using EntityLayer.Concrete
-@model List<Teacher>
+@model List<AppUser>
 <div class="col-md-6 col-lg-4 order-2 mb-4">
     <div class="card h-100">
         <div class="card-header d-flex align-items-center justify-content-between">
@@ -16,11 +16,11 @@
                         <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                             <div class="me-2">
                                 <small class="text-muted d-block mb-1">@item.TeacherBranch</small>
-                                <h6 class="mb-0">@item.TeacherNameSurname</h6>
+                                <h6 class="mb-0">@item.Name @item.Surname</h6>
                             </div>
                             <div class="user-progress d-flex align-items-center gap-1">
                                 <h6 class="mb-0">Kullanıcı Adı </h6>
-                                <span class="text-muted">@item.TeacherUserName</span>
+                                <span class="text-muted">@item.UserName</span>
                             </div>
                         </div>
                     </li>

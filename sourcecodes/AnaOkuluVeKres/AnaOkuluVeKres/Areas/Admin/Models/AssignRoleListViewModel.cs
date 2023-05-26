@@ -5,7 +5,8 @@ namespace AnaOkuluVeKres.Areas.Admin.Models
 {
     public class AssignRoleListViewModel
     {
-        public List<Teacher> Teachers { get; set; }
-        public Dictionary<int, List<string>> AssignedRolesByTeacher { get; set; }
+        public List<AppUser> Users { get; set; }
+        public Dictionary<string, List<string>> AssignedRolesByUser { get; set; }
     }
 }
+

@@ -5,6 +5,7 @@ namespace AnaOkuluVeKres.Areas.Parents.Models
 {
     public class ParentEditViewModel
     {
+        public string userName { get; set; }
         public string name { get; set; }
         public string surname { get; set; }
         public string password { get; set; }

@@ -1,8 +1,53 @@
-﻿
+﻿@model AnaOkuluVeKres.Areas.Teachers.Models.TeacherEditViewModel
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_TeacherLayout.cshtml";
 }
 
-<h1>Index</h1>
-
+<h1>Profil Düzenleme Sayfası</h1>
+<hr />
+@if (!string.IsNullOrEmpty(TempData["Message"] as string))
+{
+    <div class="alert alert-info" role="alert">
+        @TempData["Message"]
+    </div>
+}
+<form method="post" asp-action="Index" enctype="multipart/form-data">
+    <h4>Kullanıcı Adınız</h4>
+    <input type="text" asp-for="userName" class="form-control" />
+    <span asp-validation-for="userName" class="text-danger"></span>
+    <br />
+    <h4>Adınız</h4>
+    <input type="text" asp-for="name" class="form-control" />
+    <br />
+    <h4>Soyadınız</h4>
+    <input type="text" asp-for="surname" class="form-control" />
+    <br />
+    <h4>Mail Adresiniz</h4>
+    <input type="email" asp-for="mail" class="form-control" />
+    <br />
+    <h4>Şifreniz</h4>
+    <input type="text" asp-for="password" class="form-control" />
+    <br />
+    <h4>Şifre Tekrar</h4>
+    <input type="text" asp-for="confirmpassword" class="form-control" />
+    <br />
+    <h4>Telefon Numaranız</h4>
+    <input type="text" asp-for="phonenumber" class="form-control" />
+    <br />
+    <h4>Branşınız</h4>
+    <input type="text" asp-for="teacherbranch" class="form-control" />
+    <br />
+    <h4>Biyografiniz</h4>
+    <textarea cols="30" rows="5" asp-for="teacherbiography" class="form-control"></textarea>
+    <br />
+    <div class="form-group">
+        <h4>Resim Seçin</h4>
+        <input type="file" asp-for="image" />
+    </div>
+    <br />
+    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+    <hr />
+    <button class="btn btn-primary">Bilgileri Güncelle</button>
+</form>

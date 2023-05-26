@@ -1,0 +1,40 @@
+﻿@model AnaOkuluVeKres.Areas.Admin.Models.MyProfileViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Profil Düzenleme Sayfası</h1>
+<hr />
+<form method="post" enctype="multipart/form-data">
+    <h4>Kullanıcı Adınız</h4>
+    <input type="text" asp-for="UserName" class="form-control" />
+    <br />
+    <h4>Adınız</h4>
+    <input type="text" asp-for="Name" class="form-control" />
+    <br />
+    <h4>Soyadınız</h4>
+    <input type="text" asp-for="Surname" class="form-control" />
+    <br />
+    <h4>Mail Adresiniz</h4>
+    <input type="email" asp-for="Mail" class="form-control" />
+    <br />
+    <h4>Şifreniz</h4>
+    <input type="text" asp-for="Password" class="form-control" />
+    <br />
+    <h4>Şifre Tekrar</h4>
+    <input type="text" asp-for="ConfirmPassword" class="form-control" />
+    <br />
+    <h4>Telefon Numaranız</h4>
+    <input type="text" asp-for="PhoneNumber" class="form-control" />
+    <br />
+    <div class="form-group">
+        <h4>Resim Seçin</h4>
+        <input type="file" asp-for="Image" />
+    </div>
+    <hr />
+<button class="btn btn-outline-primary">Bilgileri Güncelle</button>
+</form>
+
+

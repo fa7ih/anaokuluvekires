@@ -1,7 +1,7 @@
-﻿@model EntityLayer.Concrete.Student
+﻿@model EntityLayer.Concrete.Students2
 @{
     ViewData["Title"] = "NewStudent";
-    Layout = "~/Views/Shared/_ParentLayout.cshtml";
+    Layout = "~/Views/Shared/_ParentsLayout.cshtml";
 }
 
 <h1>Öğrencinizi Kayıt Ettirmek İçin Başvurun</h1>
@@ -11,25 +11,30 @@
         <h4>Öğrenci TC Kimlik No</h4>
         <input type="text" asp-for="StudentTc" class="form-control" maxlength="11" />
     </div>
+    <br />
     <div class="form-group">
         <h4>Öğrenci Adı</h4>
         <input type="text" asp-for="StudentName" class="form-control" />
     </div>
+    <br />
     <div class="form-group">
         <h4>Öğrenci Soyadı</h4>
         <input type="text" asp-for="StudentSurName" class="form-control" />
     </div>
+    <br />
     <div class="form-group">
         <h4>Öğrenci Doğum Tarihi</h4>
         <input type="date" asp-for="StudentBirth" class="form-control" />
     </div>
+    <br />
     <div class="form-group">
-    <h4>Öğrenci Cinsiyeti</h4>
-    <select asp-for="StudentGender" class="form-control">
-        <option value="Erkek">Erkek</option>
-        <option value="Kadın">Kız</option>
-    </select>
-</div>
+        <h4>Öğrenci Cinsiyeti</h4>
+        <select asp-for="StudentGender" class="form-control">
+            <option value="Erkek">Erkek</option>
+            <option value="Kadın">Kız</option>
+        </select>
+    </div>
+    <br />
     <button class="btn btn-outline-success">Başvurunu Yap</button>
 </form>
 

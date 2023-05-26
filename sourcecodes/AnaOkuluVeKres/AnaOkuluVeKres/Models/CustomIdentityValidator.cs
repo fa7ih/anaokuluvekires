@@ -40,5 +40,13 @@ namespace AnaOkuluVeKres.Models
 			};
 		}
 
-	}
+        public override IdentityError DuplicateUserName(string userName)
+        {
+            return new IdentityError()
+            {
+                Code = "DuplicateUserName",
+                Description = "Bu Kullanıcı adı alınmış. Lütfen başka kullanıcı adı seçiniz.",
+            };
+        }
+    }
 }

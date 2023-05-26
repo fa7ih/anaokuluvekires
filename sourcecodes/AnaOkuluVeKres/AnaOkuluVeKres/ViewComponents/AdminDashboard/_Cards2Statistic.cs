@@ -28,9 +28,9 @@ namespace AnaOkuluVeKres.ViewComponents.AdminDashboard
             var endDate = new DateTime(currentYear, 12, 31);
             var userCount = context.Users
                 .Count(u => u.RegistrationDate >= startDate && u.RegistrationDate <= endDate);
-            ViewBag.v1 = context.Users.Count();
+            ViewBag.v1 = _userManager.GetUsersInRoleAsync("Veli").Result.Count();
             ViewBag.v2 = userCount;
-            ViewBag.v3 = context.Students.Count(x=>x.Status=="Onay Bekliyor");
+            ViewBag.v3 = context.Students2.Count(x=>x.Status=="Onay Bekliyor");
             return View();
         }
     }

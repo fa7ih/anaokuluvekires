@@ -1,27 +1,30 @@
-﻿<div class="col-md-7 contact-right">
-    <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="signin-form">
+﻿@model Contact
+
+
+<div class="col-md-7 contact-right">
+    <form action="@Url.Action("Index", "Contact")" method="post" class="signin-form">
         <div class="input-grids">
             <div class="row">
                 <div class="col-sm-6">
-                    <input type="text" name="w3lName" id="w3lName" placeholder="Adınız"
+                    <input type="text" name="ContactName" id="w3lName" placeholder="Adınız"
                            class="contact-input" required="" />
                 </div>
                 <div class="col-sm-6">
-                    <input type="email" name="w3lSender" id="w3lSender" placeholder="E-posta Adresiniz"
+                    <input type="email" name="ContactMail" id="w3lSender" placeholder="E-posta Adresiniz"
                            class="contact-input" required="" />
                 </div>
             </div>
-            <input type="text" name="w3lSubect" id="w3lSubect" placeholder="Başlık"
+            <input type="text" name="ContactDescription" id="w3lSubect" placeholder="Başlık"
                    class="contact-input" required="" />
-            <input type="phone" name="w3lSubect" id="w3lSubect" placeholder="Telefon"
+            <input type="tel" name="ContactPhone" id="w3lPhone" placeholder="Telefon"
                    class="contact-input" required="" />
         </div>
         <div class="form-input">
-            <textarea name="w3lMessage" id="w3lMessage" placeholder="Mesajınızı buraya yazınız"
+            <textarea name="ContactDetails" id="w3lMessage" placeholder="Mesajınızı buraya yazınız"
                       required=""></textarea>
         </div>
         <div class="text-start">
-            <button class="btn btn-style btn-style-3">Mesaj gönder</button>
+            <button type="submit" class="btn btn-style btn-style-3">Mesaj gönder</button>
         </div>
     </form>
 </div>

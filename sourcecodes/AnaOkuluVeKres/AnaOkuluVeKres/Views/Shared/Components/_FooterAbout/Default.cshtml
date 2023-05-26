@@ -1,0 +1,12 @@
+﻿<div class="col-lg-4 col-md-6 footer-list-29">
+    <h6 class="footer-title-29">Kısaca Hakkımızda</h6>
+    <p class="mb-2 pe-xl-5">
+        @if (ViewBag.v1 != null)
+        {
+            @(ViewBag.v1.Length > 175 ? ViewBag.v1.Substring(0, Math.Min(180, ViewBag.v1.Length)).Substring(0, ViewBag.v1.Substring(0, Math.Min(180, ViewBag.v1.Length)).LastIndexOf(" ")) + "..." : ViewBag.v1)
+        }
+    </p>
+    <div class="text-start">
+            <a href="/About/Index"  class="btn btn-style btn-style-3">Devamını Oku</a>
+        </div>
+</div>

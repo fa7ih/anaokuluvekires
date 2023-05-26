@@ -10,11 +10,15 @@ using System.IO;
 using System;
 using System.Linq;
 using AnaOkuluVeKres.ViewComponents.Default;
+using Microsoft.AspNetCore.Authorization;
+using AnaOkuluVeKres.Areas.Admin.Models;
+using Microsoft.Extensions.Hosting;
 
 namespace AnaOkuluVeKres.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Route("Admin/[controller]/[action]")]
+    [Authorize(Roles = "Admin")]
     public class TestimonialController : Controller
     {
         TestimonialManager testimonialManager = new TestimonialManager(new EfTestimonialDal());
@@ -35,26 +39,45 @@ namespace AnaOkuluVeKres.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult DetailsTestimonial(int id)
         {
-            Testimonial value = _context.Testimonials.Find(id);
-            if (value == null)
+            var testimonial = testimonialManager.TGetById(id);
+            if (testimonial == null)
             {
                 return NotFound();
             }
-            return View(value);
+            return View(testimonial);
         }
+
         [HttpPost]
-        public IActionResult DetailsTestimonial(Testimonial testimonial)
+        [ValidateAntiForgeryToken]
+        public IActionResult DetailsTestimonial(int testimonialId, string testimonialNameSurname, string testimonialDescription, IFormFile testimonialImageFile)
         {
-            var existingTestimonial = _context.Testimonials.Find(testimonial.TestimonialId);
-            if (existingTestimonial == null)
+            if (ModelState.IsValid)
             {
-                return NotFound();
+                Testimonial existingTestimonial = testimonialManager.TGetById(testimonialId);
+                if (existingTestimonial == null)
+                {
+                    return NotFound();
+                }
+
+                existingTestimonial.TestimonialNameSurname = testimonialNameSurname;
+                existingTestimonial.TestimonialDescription = testimonialDescription;
+
+                if (testimonialImageFile != null && testimonialImageFile.Length > 0)
+                {
+                    string uploadsFolder = Path.Combine(_hostEnvironment.WebRootPath, "TestimonialImages");
+                    string uniqueFileName = Guid.NewGuid().ToString() + "_" + testimonialImageFile.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                    testimonialImageFile.CopyTo(new FileStream(filePath, FileMode.Create));
+
+                    existingTestimonial.TestimonialImageUrl = uniqueFileName;
+                }
+
+                testimonialManager.TUpdate(existingTestimonial);
+
+                return RedirectToAction("Index", "Testimonial");
             }
-            existingTestimonial.TestimonialNameSurname = testimonial.TestimonialNameSurname;
-            existingTestimonial.TestimonialDescription = testimonial.TestimonialDescription;
-            existingTestimonial.TestimonialImageStatus = true;
-            testimonialManager.TUpdate(existingTestimonial);
-            return RedirectToAction("Index","Testimonial");
+
+            return View();
         }
         [HttpPost]
         public IActionResult PassiveTestimonials(int id)

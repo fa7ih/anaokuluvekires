@@ -1,0 +1,48 @@
+﻿@model LoginModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_UıLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="~/web2/css/style.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+    <div class="mid-class">
+        <div class="art-right-w3ls">
+            <h2>Admin Giriş Sayfası</h2>
+            <form asp-action="Login" method="post">
+                <div class="main">
+                    <div class="form-left-to-w3l">
+                        <input type="text" asp-for="Username" placeholder="Kullanıcı adı" required="">
+                        <span asp-validation-for="Username"></span>
+                    </div>
+                    <div class="form-left-to-w3l">
+                        <input type="password" asp-for="Password" placeholder="Şifre" required="">
+                        <span asp-validation-for="Password"></span>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="left-side-forget">
+                    <input type="checkbox" class="checked">
+                    <span class="remenber-me">Beni Hatırla</span>
+                </div>
+                <div class="right-side-forget">
+                    <a href="/PasswordChange/ForgetPassword" class="for">Parolanızı mı unuttunuz...?</a>
+                </div>
+                <div class="clear"></div>
+                <div class="btnn">
+                    <button type="submit">Giriş Yap</button>
+                </div>
+                @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"] as string))
+                {
+                    <div class="error-message">@ViewData["ErrorMessage"]</div>
+                }
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

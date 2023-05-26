@@ -11,7 +11,6 @@ namespace EntityLayer.Concrete
     {
         public int AppRoleId { get; set; }
         public string RoleName { get; set; }
-        public ICollection<AppRoleTeacher> AppRoleTeachers { get; set; }
     }
 }
 

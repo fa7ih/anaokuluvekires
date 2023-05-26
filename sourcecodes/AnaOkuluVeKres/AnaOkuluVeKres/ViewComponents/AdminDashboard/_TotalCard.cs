@@ -19,8 +19,8 @@ namespace AnaOkuluVeKres.ViewComponents.AdminDashboard
         public IViewComponentResult Invoke()
         {
             var currentYear = DateTime.Now.Year; 
-            var enrollments = _context.Students
-                .Where(s => s.EnrollmentDate.Year == currentYear) 
+            var enrollments = _context.Students2
+                .Where(s => s.EnrollmentDate.Year == currentYear && s.Status == "Onaylandı") 
                 .GroupBy(s => new { s.EnrollmentDate.Year, s.EnrollmentDate.Month })
                 .Select(g => new { Month = g.Key, Count = g.Count() })
                 .OrderBy(g => g.Month.Year)

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IStudentDal:IGenericDal<Student>
+    public interface IStudentDal:IGenericDal<Students2>
     {
-        List<Student> GetlistWithStudentByWaitDisapproved(int id);
-        List<Student> GetlistWithStudentByAccepted(int id);
+        List<Students2> GetlistWithStudentByWaitDisapproved(int id);
+        List<Students2> GetlistWithStudentByAccepted(int id);
     }
 }

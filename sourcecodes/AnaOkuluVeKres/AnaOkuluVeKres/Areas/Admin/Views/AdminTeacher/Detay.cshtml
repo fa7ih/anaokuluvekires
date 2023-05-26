@@ -1,0 +1,48 @@
+﻿@model AppUser
+
+@{
+    ViewData["Title"] = "Detay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link rel="stylesheet" href="~/starterpersonal/assets/css/style-liberty.css">
+<h1>Öğretmen Detayı</h1>
+<hr />
+<section class="w3l-about py-5" id="about">
+    <div class="container py-md-5 py-2">
+        <div class="row w3l-row">
+            <div class="col-lg-5 my-image pe-lg-5 mb-lg-0 mb-md-5 mb-4">
+                <img src="~/UserImages/@Model.ImageUrl" alt="" class="img-fluid">
+            </div>
+            <div class="col-lg-7 w3l-about-info px-lg-4 align-center">
+                <h6 class="w3l-title-small mb-1">Öğretmen Biyografisi</h6>
+                <h3 class="w3l-title-main mb-2">Kullanıcı Adı: @Model.UserName</h3>
+                <p class="my-4 pe-lg-5">@Model.TeacherBiography</p>
+                <div class="my-info mt-5">
+                    <div class="single-info">
+                        <span>Adı:</span>
+                        <p>@Model.Name</p>
+                    </div>
+                    <div class="single-info">
+                        <span>Soyadı:</span>
+                        <p>@Model.Surname</p>
+                    </div>
+                    <div class="single-info">
+                        <span>Email:</span>
+                        <p>@Model.Email</p>
+                    </div>
+                    <div class="single-info">
+                        <span>Branşı:</span>
+                        <p>@Model.TeacherBranch</p>
+                    </div>
+                    <div class="single-info">
+                        <span>Telefonu:</span>
+                        <p><a href="tel:@Model.PhoneNumber">@Model.PhoneNumber</a></p>
+                    </div>
+                </div>
+                <div class="w3l-btn">
+                    <a href="/Admin/Mail/Index" class="btn btn-style btn-primary mt-lg-5 mt-4 me-md-2">Mail Gönder</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

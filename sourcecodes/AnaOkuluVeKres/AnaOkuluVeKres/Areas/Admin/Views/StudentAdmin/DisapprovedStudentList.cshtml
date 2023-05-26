@@ -1,4 +1,6 @@
-﻿@model List<Student>
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<Students2>
 
 @{
     ViewData["Title"] = "DisapprovedStudentList";
@@ -47,4 +49,5 @@ else
             </tr>
         }
     </table>
+    @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}))
 }

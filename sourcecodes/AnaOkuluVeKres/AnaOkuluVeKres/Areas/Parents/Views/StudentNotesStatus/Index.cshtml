@@ -1,0 +1,90 @@
+﻿@model List<AnaOkuluVeKres.Areas.Teachers.Models.StudentStatusViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_ParentsLayout.cshtml";
+}
+
+<h1>Öğrencinin Durum Bilgisi</h1>
+<hr />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Öğrenci Adı Soyadı</th>
+            <th>Öğrenci Numarası</th>
+            <th>Sağlık Durumu</th>
+            <th>Sınıf İçi Durumu</th>
+            <th>Öğretmenin Notu</th>
+            <th>Detayları</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@(Model.IndexOf(student) + 1)</td>
+                <td>@student.Name</td>
+                <td>@student.StudentNo</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(student.StudentStatusHealth))
+                    {
+                        if (student.StudentStatusHealth.Length > 50)
+                        {
+                            <span class="truncated-text">@student.StudentStatusHealth.Substring(0, 50)...</span>
+                            <span class="full-text" style="display: none;">@student.StudentStatusHealth</span>
+                        }
+                        else
+                        {
+                            @student.StudentStatusHealth
+                        }
+                    }
+                    else
+                    {
+                        <span>Sağlık durumu mevcut değil.</span>
+                    }
+                </td>
+                <td>
+                    @if (!string.IsNullOrEmpty(student.StudentStatusInClassSituation))
+                    {
+                        if (student.StudentStatusInClassSituation.Length > 50)
+                        {
+                            <span class="truncated-text">@student.StudentStatusInClassSituation.Substring(0, 50)...</span>
+                            <span class="full-text" style="display: none;">@student.StudentStatusInClassSituation</span>
+                        }
+                        else
+                        {
+                            @student.StudentStatusInClassSituation
+                        }
+                    }
+                    else
+                    {
+                        <span>Sınıf içi durumu mevcut değil.</span>
+                    }
+                </td>
+                <td>
+                    @if (!string.IsNullOrEmpty(student.StudentStatusTeachNotes))
+                    {
+                        if (student.StudentStatusTeachNotes.Length > 50)
+                        {
+                            <span class="truncated-text">@student.StudentStatusTeachNotes.Substring(0, 50)...</span>
+                            <span class="full-text" style="display: none;">@student.StudentStatusTeachNotes</span>
+                        }
+                        else
+                        {
+                            @student.StudentStatusTeachNotes
+                        }
+                    }
+                    else
+                    {
+                        <span>Öğretmenin notu mevcut değil.</span>
+                    }
+                </td>
+                <td>
+                    <a href="@Url.Action("Details", "StudentNotesStatus", new { id = student.StudentId })" class="btn btn-outline-info">Detayları Görüntüle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

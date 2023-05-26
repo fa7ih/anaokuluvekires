@@ -1,0 +1,43 @@
+﻿@model AnaOkuluVeKres.Areas.Parents.Models.StudentEditViewModel
+
+@{
+    ViewData["Title"] = "EditStudent";
+    Layout = "~/Views/Shared/_ParentsLayout.cshtml";
+}
+
+<h1>Öğrenci Düzenleme Sayfası</h1>
+<hr />
+<form asp-action="EditStudent" method="post">
+    <input type="hidden" asp-for="StudentId" />
+
+    <div class="form-group">
+        <h5>Ad</h5>
+        <input type="text" asp-for="StudentName" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <h5>Soyad</h5>
+        <input type="text" asp-for="StudentSurName" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <h5>TC Kimlik Numarası</h5>
+        <input type="text" asp-for="StudentTc" class="form-control" />
+        <span asp-validation-for="StudentTc" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="form-group">
+        <h5>Doğum Tarihi</h5>
+        <input type="date" asp-for="StudentBirth" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <h5>Cinsiyet</h5>
+        <select asp-for="StudentGender" class="form-control">
+            <option value="Erkek">Erkek</option>
+            <option value="Kız">Kız</option>
+        </select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>

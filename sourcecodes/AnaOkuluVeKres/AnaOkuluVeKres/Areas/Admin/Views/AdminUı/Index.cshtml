@@ -1,0 +1,55 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<Contact>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int sayac = 0;
+}
+
+<h1>Siteden Gelen Mesajlar</h1>
+<hr />
+@if (!Model.Any())
+{
+    <h4>Mesajınız Bulunmamaktadır.</h4>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Adı Soyad</th>
+            <th>Mesajın Başlığı</th>
+            <th>Mail</th>
+            <th>Telefon Numarası</th>
+            <th>Sil</th>
+            <th>Detay</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @{
+                    sayac++;
+                }
+                <th>@sayac</th>
+                <td>@item.ContactName</td>
+                <td>@item.ContactDescription</td>
+                <td>@item.ContactMail</td>
+                <td>@item.ContactPhone</td>
+                <td>
+                    <form method="post" asp-action="DeleteMessage">
+                        <input type="hidden" name="id" value="@item.ContactId" />
+                        <button type="submit" class="btn btn-outline-danger">Okundu</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" asp-action="Details">
+                        <input type="hidden" name="id" value="@item.ContactId" />
+                        <button type="submit" class="btn btn-outline-info">Detay</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+    @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}))
+}

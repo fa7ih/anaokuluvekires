@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface IStudentService:IGenericService<Student>
+    public interface IStudentService:IGenericService<Students2>
     {
-        List<Student> GetListApprovalStudent(int id);
-        List<Student> GetlistWithStudentByAccepted(int id);
-        List<Student> GetlistWithStudentByWaitDisapproved(int id);
+        List<Students2> GetListApprovalStudent(int id);
+        List<Students2> GetlistWithStudentByAccepted(int id);
+        List<Students2> GetlistWithStudentByWaitDisapproved(int id);
     }
 }

@@ -8,7 +8,7 @@ using MimeKit;
 namespace AnaOkuluVeKres.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [AllowAnonymous]
+    [Authorize(Roles = "Admin")]
     public class MailController : Controller
     {
         [HttpGet] 
@@ -20,17 +20,20 @@ namespace AnaOkuluVeKres.Areas.Admin.Controllers
         public IActionResult Index(MailRequest mailRequest)
         {
             MimeMessage mimeMessage = new MimeMessage();
-            MailboxAddress mailboxAddressFrom = new MailboxAddress("Admin","fk491642@gmail.com");
+            MailboxAddress mailboxAddressFrom = new MailboxAddress("Admin", "anaokuluvekres.yonetici@gmail.com");
             mimeMessage.From.Add(mailboxAddressFrom);
             MailboxAddress mailboxAddressTo = new MailboxAddress("User", mailRequest.ReciverMail);
             mimeMessage.To.Add(mailboxAddressTo);
-            //mimeMessage.Body = mailRequest.Body;
+            var bodyBuilder = new BodyBuilder();
+            bodyBuilder.TextBody= mailRequest.Body;
+            mimeMessage.Body=bodyBuilder.ToMessageBody();
             mimeMessage.Subject = mailRequest.Subject;
             SmtpClient client = new SmtpClient();
             client.Connect("smtp.gmail.com", 587, false);
-            client.Authenticate("fk491642@gmail.com", "fetih1453");
+            client.Authenticate("anaokuluvekres.yonetici@gmail.com", "ymukgrnqnccufekm");
             client.Send(mimeMessage);
             client.Disconnect(true);
+            TempData["SuccessMessage"] = "Mail başarıyla gönderildi.";
             return View();
         }
     }

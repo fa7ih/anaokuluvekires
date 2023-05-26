@@ -1,0 +1,47 @@
+﻿@model List<Students2>
+<div class="col-12 col-xl-4">
+    <div class="card h-100">
+        <div class="card-header pb-0 p-3">
+            <h6 class="mb-0">Aktif Öğrencilerim</h6>
+        </div>
+        <div class="card-body p-3">
+            <ul class="list-group">
+                @if (!Model.Any())
+                {
+                    <hr />
+                    <a href="/Parents/Student/NewStudent" class="btn btn-outline-info">Kayıt İçin Başvur</a>
+                    <hr />
+                    <a href="/Parents/Student/MyApprovalStudent" class="btn btn-outline-success">Kayıt Bekleyen Öğrencilerim</a>
+                    <hr />
+                 <a href="/Parents/Student/GetlistWithStudentByWaitDisapproved" class="btn btn-outline-danger">Onaylanmayan Öğrencilerim</a>
+                    <hr />
+                    <a href="/Parents/ContactAdmin/SendMessage" class="btn btn-outline-primary">Yönetici İle İletişime Geç</a>
+                    <hr />
+                }
+                else
+                {
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Adı</th>
+                            <th>Soyadı</th>
+                            <th>Cinsiyeti</th>
+                        </tr>
+                        @foreach (var item in Model.Take(3))
+                        {
+                            <tr>
+                                <td>@item.StudentName</td>
+                                <td>@item.StudentSurName</td>
+                                <td>@item.StudentGender</td>
+                            </tr>
+                        }
+                    </table>
+                    <hr />
+                    <a href="/Parents/Student/MyCurrentStudent/" class="btn btn-outline-info">Listeye Git</a>
+                    <hr />
+                    <a href="/Parents/StudentNotes/Index" class="btn btn-outline-success">Notlarına Göz At</a>
+                    <hr />
+                }
+            </ul>
+        </div>
+    </div>
+</div>

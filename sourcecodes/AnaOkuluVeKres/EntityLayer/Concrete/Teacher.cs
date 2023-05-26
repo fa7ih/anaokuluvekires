@@ -23,14 +23,5 @@ namespace EntityLayer.Concrete
         public bool TeacherStatus { get; set; }
         public string TeacherBiography { get; set; }
         public string TeacherGender { get; set; }
-
-
-        public virtual ICollection<StudentStatus> StudentStatuses { get; set; }
-        [InverseProperty(nameof(AppRoleTeacher.Teacher))]
-        public ICollection<AppRoleTeacher> AppRoleTeachers { get; set; }
     }
-   
-    
 }
-
-

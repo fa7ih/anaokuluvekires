@@ -1,0 +1,31 @@
+﻿@model AnaOkuluVeKres.Areas.Teachers.Models.StudentStatusViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<h1>Öğrenci Detayları</h1>
+<hr />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Öğrenci Adı Soyadı</th>
+            <th>Öğrenci Numarası</th>
+            <th>Sağlık Durumu</th>
+            <th>Sınıf İçi Durumu</th>
+            <th>Öğretmenin Notu</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Name</td>
+            <td>@Model.StudentNo</td>
+            <td>@Model.StudentStatusHealth</td>
+            <td>@Model.StudentStatusInClassSituation</td>
+            <td>@Model.StudentStatusTeachNotes</td>
+        </tr>
+    </tbody>
+</table>
+<a href="/Teachers/StudentStatus/Index" class="btn btn-outline-success">Listeye Geri Dön</a>

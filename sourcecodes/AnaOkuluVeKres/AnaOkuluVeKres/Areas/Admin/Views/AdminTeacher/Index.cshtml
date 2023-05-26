@@ -1,0 +1,63 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<AppUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int sayac = 0;
+}
+
+<h1>Eğitmenlerimiz</h1>
+<hr />
+@if (!Model.Any())
+{
+    <h4>Kayıtlı Öğretmeniniz Bulunmamaktadır.</h4>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Kullanıcı Adı</th>
+            <th>Adı Soyadı</th>
+            <th>Durumu</th>
+            <th>Pasif Yap</th>
+            <th>Aktif Et</th>
+            <th>Detay</th>
+        </tr>
+        @foreach (var user in Model)
+        {
+            <tr>
+                @{
+                    sayac++;
+                }
+                <th>@sayac</th>
+                <td>@user.UserName</td>
+                <td>@user.Name @user.Surname</td>
+                <td>@(user.TeacherStatus ? "Aktif" : "Pasif")</td>
+                <td>
+                    <form method="post" asp-action="DeleteTeacher">
+                        <input type="hidden" name="id" value="@user.Id" />
+                        <button type="submit" class="btn btn-outline-danger">Pasif Yap</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" asp-action="ActiveTeacher">
+                        <input type="hidden" name="id" value="@user.Id" />
+                        <button type="submit" class="btn btn-outline-success">Aktif Et</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" asp-action="Detay">
+                        <input type="hidden" name="id" value="@user.Id" />
+                        <button type="submit" class="btn btn-outline-info">Detay</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+    <div class="pagination-container">
+        @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}))
+    </div>
+    <a href="/Admin/AdminTeacher/AddTeacher" class="btn btn-outline-primary">Öğretmen Kayıt</a>
+}

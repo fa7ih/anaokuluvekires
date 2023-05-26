@@ -1,5 +1,5 @@
 ﻿@using EntityLayer.Concrete
-@model List<Teacher>
+@model List<AppUser>
 <div class="w3l-grids-block-5 home-course-bg py-5" id="courses">
     <div class="container py-md-5 py-4">
         <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
@@ -12,7 +12,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="coursecard-single">
                         <div class="grids5-info position-relative">
-                            <img src="@item.TeacherImgUrl" alt="" class="img-fluid" />
+                            <img src="~/UserImages/@item.ImageUrl" alt="" class="img-fluid" />
                             <div class="meta-list">
                                 <a>@item.TeacherBranch</a>
                             </div>
@@ -23,8 +23,18 @@
                                     <li> <i class="fas fa-star"></i> 4.5</li>
                                 </ul>
                             </div>
-                            <h4><a>@item.TeacherNameSurname</a></h4>
-                            <p>@(item.TeacherBiography.Length > 75 ? item.TeacherBiography.Substring(0, item.TeacherBiography.Substring(0, 80).LastIndexOf(" ")) + "..." : item.TeacherBiography + "...")</p>
+                            <h4><a>@item.Name @item.Surname</a></h4>
+                            @if (item != null && item.TeacherBiography != null)
+                            {
+                                <p>
+                                    @(item.TeacherBiography.Length > 75 ? item.TeacherBiography.Substring(0, item.TeacherBiography.Substring(0, 80).LastIndexOf(" ")) + "..." : item.TeacherBiography + "...")
+                                </p>
+                            }
+                            else
+                            {
+                                <p>Öğretmen biyografisi mevcut değil.</p>
+                            }
+
                             <div class="top-content-border d-flex align-items-center justify-content-between mt-4 pt-4">
                                 <a class="btn btn-style-primary" href="/Teacher/Index/">
                                     Öğretmenimizin Detayları<i class="fas fa-arrow-right"></i>

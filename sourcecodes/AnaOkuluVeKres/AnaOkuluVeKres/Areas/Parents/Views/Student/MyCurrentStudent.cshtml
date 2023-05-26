@@ -1,8 +1,8 @@
-﻿@model List<Student>
+﻿@model List<Students2>
 
 @{
     ViewData["Title"] = "MyCurrentStudent";
-    Layout = "~/Views/Shared/_ParentLayout.cshtml";
+    Layout = "~/Views/Shared/_ParentsLayout.cshtml";
     int sayac = 0;
 }
 
@@ -23,19 +23,25 @@ else
             <th>Doğum Tarihi</th>
             <th>Cinsiyeti</th>
             <th>Durumu</th>
+            <th>Düzenle</th>
         </tr>
         @foreach (var item in Model)
         {
             <tr>
-                @{sayac++;}
-                    <th>@sayac</th>
-                    <td>@item.StudentTc</td>
-                    <td>@item.StudentName</td>
-                    <td>@item.StudentSurName</td>
-                    <td>@(((DateTime)item.StudentBirth).ToString("dd/MMM/yyyy"))</td>
-                    <td>@item.StudentGender</td>
-                    <td>@item.Status</td>
-                </tr>
+                @{
+                    sayac++;
+                }
+                <th>@sayac</th>
+                <td>@item.StudentTc</td>
+                <td>@item.StudentName</td>
+                <td>@item.StudentSurName</td>
+                <td>@(((DateTime)item.StudentBirth).ToString("dd/MMM/yyyy"))</td>
+                <td>@item.StudentGender</td>
+                <td>@item.Status</td>
+                <td>
+                    <a href="@Url.Action("EditStudent", "Student", new { id = item.StudentId })" class="btn btn-outline-info">Düzenle</a>
+                </td>
+            </tr>
         }
     </table>
 }

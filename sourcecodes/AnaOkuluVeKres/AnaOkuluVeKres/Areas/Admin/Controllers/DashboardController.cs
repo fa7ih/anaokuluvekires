@@ -8,7 +8,8 @@ using System.Linq;
 namespace AnaOkuluVeKres.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [AllowAnonymous]
+    [Authorize(Roles = "Admin")]
+    [Route("Admin/[controller]/[action]")]
     public class DashboardController : Controller
     {
         public IActionResult Index()

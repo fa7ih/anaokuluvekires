@@ -105,21 +105,6 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("AspNetRoles");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.AppRoleTeacher", b =>
-                {
-                    b.Property<int>("TeacherId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("AppRoleId")
-                        .HasColumnType("int");
-
-                    b.HasKey("TeacherId", "AppRoleId");
-
-                    b.HasIndex("AppRoleId");
-
-                    b.ToTable("AppRoleTeachers");
-                });
-
             modelBuilder.Entity("EntityLayer.Concrete.AppUser", b =>
                 {
                     b.Property<int>("Id")
@@ -185,6 +170,15 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Surname")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("TeacherBiography")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TeacherBranch")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TeacherStatus")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
@@ -227,12 +221,105 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("ContactPhone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
                     b.HasKey("ContactId");
 
                     b.ToTable("Contacts");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Contact2", b =>
+                {
+                    b.Property<int>("Contact2Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Contact2Body")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Contact2Mail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Contact2Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Contact2Reciver")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Contact2Sender")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Contact2Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Contact2Id");
+
+                    b.ToTable("Contacts2");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Contact3", b =>
+                {
+                    b.Property<int>("Contact3Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Contact2ReplyBody")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Contact2ReplyCreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Contact2ReplyMail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Contact2ReplyPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Contact2ReplyReciver")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Contact2ReplySender")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Contact2ReplyTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Contact3Id");
+
+                    b.ToTable("Contacts3");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Contact4", b =>
+                {
+                    b.Property<int>("AdminContactId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AdminReplyBody")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("AdminReplyCreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("AdminReplyMail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AdminReplyPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AdminReplyReciver")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AdminReplySender")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AdminReplyTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AdminContactId");
+
+                    b.ToTable("Contacts4");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Feature", b =>
@@ -295,21 +382,6 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("Informations");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.Newsletter", b =>
-                {
-                    b.Property<int>("NewsletterId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Mail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("NewsletterId");
-
-                    b.ToTable("Newsletters");
-                });
-
             modelBuilder.Entity("EntityLayer.Concrete.Parent", b =>
                 {
                     b.Property<int>("ParentId")
@@ -334,7 +406,55 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("Parents");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.Student", b =>
+            modelBuilder.Entity("EntityLayer.Concrete.StudentStatus", b =>
+                {
+                    b.Property<int>("StudentStatusId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentStatusAdaptation")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentStatusAlphabet")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentStatusDance")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentStatusDevelopment")
+                        .HasColumnType("int");
+
+                    b.Property<string>("StudentStatusHealth")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StudentStatusInClassSituation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("StudentStatusMaths")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentStatusMusic")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentStatusSport")
+                        .HasColumnType("int");
+
+                    b.Property<string>("StudentStatusTeachNotes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("StudentStatusId");
+
+                    b.HasIndex("StudentId")
+                        .IsUnique();
+
+                    b.ToTable("StudentStatuses");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Students2", b =>
                 {
                     b.Property<int>("StudentId")
                         .ValueGeneratedOnAdd()
@@ -375,60 +495,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Students");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.StudentStatus", b =>
-                {
-                    b.Property<int>("StudentStatusId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("StudentId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StudentStatusAdaptation")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StudentStatusAlphabet")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StudentStatusDance")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StudentStatusDevelopment")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StudentStatusHealth")
-                        .HasColumnType("int");
-
-                    b.Property<string>("StudentStatusInClassSituation")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("StudentStatusMaths")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StudentStatusMusic")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StudentStatusSport")
-                        .HasColumnType("int");
-
-                    b.Property<string>("StudentStatusTeachNotes")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TeacherId")
-                        .HasColumnType("int");
-
-                    b.HasKey("StudentStatusId");
-
-                    b.HasIndex("StudentId")
-                        .IsUnique();
-
-                    b.HasIndex("TeacherId");
-
-                    b.ToTable("StudentStatuses");
+                    b.ToTable("Students2");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Teacher", b =>
@@ -640,53 +707,26 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.AppRoleTeacher", b =>
-                {
-                    b.HasOne("EntityLayer.Concrete.AppRole", "AppRole")
-                        .WithMany("AppRoleTeachers")
-                        .HasForeignKey("AppRoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EntityLayer.Concrete.Teacher", "Teacher")
-                        .WithMany("AppRoleTeachers")
-                        .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AppRole");
-
-                    b.Navigation("Teacher");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.Student", b =>
-                {
-                    b.HasOne("EntityLayer.Concrete.AppUser", "AppUser")
-                        .WithMany("Students")
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AppUser");
-                });
-
             modelBuilder.Entity("EntityLayer.Concrete.StudentStatus", b =>
                 {
-                    b.HasOne("EntityLayer.Concrete.Student", "Student")
+                    b.HasOne("EntityLayer.Concrete.Students2", "Student")
                         .WithOne("StudentStatus")
                         .HasForeignKey("EntityLayer.Concrete.StudentStatus", "StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("EntityLayer.Concrete.Teacher", "Teacher")
-                        .WithMany("StudentStatuses")
-                        .HasForeignKey("TeacherId")
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Students2", b =>
+                {
+                    b.HasOne("EntityLayer.Concrete.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Student");
-
-                    b.Navigation("Teacher");
+                    b.Navigation("AppUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -740,26 +780,9 @@ namespace DataAccessLayer.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.AppRole", b =>
-                {
-                    b.Navigation("AppRoleTeachers");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.AppUser", b =>
-                {
-                    b.Navigation("Students");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.Student", b =>
+            modelBuilder.Entity("EntityLayer.Concrete.Students2", b =>
                 {
                     b.Navigation("StudentStatus");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.Teacher", b =>
-                {
-                    b.Navigation("AppRoleTeachers");
-
-                    b.Navigation("StudentStatuses");
                 });
 #pragma warning restore 612, 618
         }

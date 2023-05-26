@@ -33,12 +33,16 @@
                     <span class="remenber-me">Beni Hatırla </span>
                 </div>
                 <div class="right-side-forget">
-                    <a href="#" class="for">Parolanızı Mı Unuttunuz...?</a>
+                    <a href="/PasswordChange/ForgetPassword" class="for">Parolanızı Mı Unuttunuz...?</a>
                 </div>
                 <div class="clear"></div>
                 <div class="btnn">
                     <button type="submit">Giriş Yap</button>
                 </div>
+                @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"] as string))
+                {
+                        <div class="error-message">@ViewData["ErrorMessage"]</div>
+                }
             </form>
             <div class="w3layouts_more-buttn">
                 <h3>

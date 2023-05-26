@@ -1,0 +1,39 @@
+﻿@model Contact2
+
+@{
+    ViewData["Title"] = "MessageDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link rel="stylesheet" href="~/starterpersonal/assets/css/style-liberty.css">
+<h1>Mesajın Detayları</h1>
+<hr />
+<section class="w3l-about py-5" id="about">
+    <div class="container py-md-5 py-2">
+        <div class="row w3l-row">
+            <div class="col-lg-7 w3l-about-info px-lg-4 align-center">
+                <h6 class="w3l-title-small mb-1">Mesaj Detayları</h6>
+                <h3 class="w3l-title-main mb-2">@Model.Contact2Title</h3>
+                <p class="my-4 pe-lg-5">@Model.Contact2Body</p>
+                <div class="my-info mt-5">
+                    <div class="single-info">
+                        <span>Adı:</span>
+                        <p>@Model.Contact2Sender</p>
+                    </div>
+                    <div class="single-info">
+                        <span>Email:</span>
+                        <p>@Model.Contact2Mail</p>
+                    </div>
+                    <div class="single-info">
+                        <span>Telefonu:</span>
+                        <p><a href="tel:@Model.Contact2Phone">@Model.Contact2Phone</a></p>
+                    </div>
+                </div>
+                <div class="w3l-btn">
+                    <a href="/Admin/MessageParent/ReplyMessage" class="btn btn-style btn-primary mt-lg-5 mt-4 me-md-2">Cevapla</a>
+                    <span style="margin-right: 10px;"></span>
+                    <a href="/Admin/MessageParent/Index" class="btn btn-style btn-info mt-lg-5 mt-4 me-md-2">Mesaj Listesi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

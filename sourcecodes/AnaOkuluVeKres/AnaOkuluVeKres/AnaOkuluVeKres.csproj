@@ -20,6 +20,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
     <PackageReference Include="Serilog.Extensions.Logging.File" Version="3.0.0" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="8.0.7" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,10 +33,9 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Parents\Data\" />
     <Folder Include="Areas\Teachers\Data\" />
-    <Folder Include="Areas\Teachers\Models\" />
     <Folder Include="wwwroot\TestimonialImages\" />
     <Folder Include="wwwroot\TeacherImages\" />
-    <Folder Include="wwwroot\ParentImages\" />
+    <Folder Include="wwwroot\UserImages\" />
   </ItemGroup>
 
   <ItemGroup>

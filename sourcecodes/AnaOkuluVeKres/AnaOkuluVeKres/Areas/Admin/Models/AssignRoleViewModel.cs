@@ -9,8 +9,8 @@ namespace AnaOkuluVeKres.Areas.Admin.Models
 {
     public class AssignRoleViewModel
     {
-        public int TeacherId { get; set; }
-        public string TeacherNameSurname { get; set; }
+        public int UserId { get; set; }
+        public string UserName { get; set; }
         public int SelectedRoleId { get; set; }
         public List<SelectListItem> Roles { get; set; }
     }

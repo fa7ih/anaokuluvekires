@@ -12,7 +12,7 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public int StudentStatusId { get; set; }
-        public int StudentStatusHealth { get; set; }
+        public string StudentStatusHealth { get; set; }
         public int StudentStatusDevelopment { get; set; }
         public int StudentStatusAdaptation { get; set; }
         public int StudentStatusMusic { get; set; }
@@ -23,12 +23,10 @@ namespace EntityLayer.Concrete
         public int StudentStatusMaths { get; set; }
         public string StudentStatusTeachNotes { get; set; }
 
-        [ForeignKey(nameof(Teacher))]
-        public int TeacherId { get; set; }
-        public Teacher Teacher { get; set; }
+        
         [ForeignKey(nameof(Student))]
         public int StudentId { get; set; }
-        public Student Student { get; set; }
+        public Students2 Student { get; set; }
     }
 }
 

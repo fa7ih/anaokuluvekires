@@ -1,0 +1,46 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<AnaOkuluVeKres.Areas.Teachers.Models.StudentViewModel>
+@{
+    ViewData["Title"] = "Index2";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+    int sayac = 0;
+}
+
+<h1>Öğrencinin NOT Değerleri</h1>
+<hr />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Öğrenci Adı Soyadı</th>
+            <th>Öğrenci Tc</th>
+            <th>Öğrenci Numarası</th>
+            <th>Müzik Notu</th>
+            <th>Yazılım Notu</th>
+            <th>Dans Notu</th>
+            <th>Spor Notu</th>
+            <th>Alfabe Notu</th>
+            <th>Matematik Notu</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            sayac++;
+            <tr>
+                <td>@sayac</td>
+                <td>@student.Name</td>
+                <td>@student.StudentTc</td>
+                <td>@student.StudentNo</td>
+                <td>@student.StudentStatusMusic</td>
+                <td>@student.StudentStatusDevelopment</td>
+                <td>@student.StudentStatusDance</td>
+                <td>@student.StudentStatusSport</td>
+                <td>@student.StudentStatusAlphabet</td>
+                <td>@student.StudentStatusMaths</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}))

@@ -1,5 +1,5 @@
 ﻿@using EntityLayer.Concrete
-@model List<Teacher>
+@model List<AppUser>
 <div class="w3l-grids-block-5 py-5">
     <div class="container py-md-5 py-4">
         <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
@@ -11,7 +11,7 @@
             <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
                 <div class="coursecard-single">
                     <div class="grids5-info position-relative">
-                        <img src="@item.TeacherImgUrl" alt="" class="img-fluid" />
+                        <img src="~/UserImages/@item.ImageUrl" alt="" class="img-fluid" />
                         <div class="meta-list">
                             <a class="sec-2">@item.TeacherBranch</a>
                         </div>
@@ -22,7 +22,7 @@
                                 <li> <i class="fas fa-star"></i> 4.3</li>
                             </ul>
                         </div>
-                        <h4><a>@item.TeacherNameSurname</a></h4>
+                        <h4><a>@item.Name @item.Surname</a></h4>
                         <p>@item.TeacherBiography</p>
                     </div>
                 </div>

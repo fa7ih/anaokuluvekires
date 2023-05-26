@@ -11,18 +11,18 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfStudentDal : GenericRepository<Student>, IStudentDal
+    public class EfStudentDal : GenericRepository<Students2>, IStudentDal
     {
         Context context = new Context();
 
-        public List<Student> GetlistWithStudentByAccepted(int id)
+        public List<Students2> GetlistWithStudentByAccepted(int id)
         {
-            return context.Students.Where(y => y.Status == "Onaylandı" && y.AppUserId == id).ToList();
+            return context.Students2.Where(y => y.Status == "Onaylandı" && y.AppUserId == id).ToList();
         }
 
-        public List<Student> GetlistWithStudentByWaitDisapproved(int id)
+        public List<Students2> GetlistWithStudentByWaitDisapproved(int id)
         {
-            return context.Students.Where(y => y.Status == "Onaylanmadı" && y.AppUserId == id).ToList();
+            return context.Students2.Where(y => y.Status == "Onaylanmadı" && y.AppUserId == id).ToList();
         }
     }
 }

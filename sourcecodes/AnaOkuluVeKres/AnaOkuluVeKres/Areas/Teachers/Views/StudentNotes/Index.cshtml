@@ -1,0 +1,113 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<Students2>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+    int sayac = 0;
+}
+
+<h1>Öğrenci Notlandırma Sayfası</h1>
+<hr />
+
+@if (!Model.Any())
+{
+    <h4>Öğrenci Bulunmamaktadır.</h4>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>TC Kimlik Numarası</th>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Okul No</th>
+            <th>Notunu Gir</th>
+            @if (User.IsInRole("Rehber Öğretmeni"))
+            {
+                <th>Sınıf İçi Durumu</th>
+            }
+        </tr>
+
+        @foreach (var student in Model)
+        {
+            sayac++;
+            <tr>
+                <th>@sayac</th>
+                <td>@student.StudentTc</td>
+                <td>@student.StudentName</td>
+                <td>@student.StudentSurName</td>
+                <td>@student.StudentNo</td>
+                <td>
+                    <form method="post" asp-action="Grade">
+                        <input type="hidden" name="studentId" value="@student.StudentId" />
+
+                        @if (User.IsInRole("Hemşire"))
+                        {
+                            <input type="text" name="stringStatus" />
+                            <input type="hidden" name="statusType" value="Health" />
+                        }
+
+                        @if (User.IsInRole("Rehber Öğretmeni"))
+                        {
+                            <input type="text" name="stringStatus" />
+                            <input type="hidden" name="statusType" value="TeacherNotes" />
+                        }
+
+                        @if (User.IsInRole("Yazılım Öğretmeni"))
+                        {
+                            <input type="number" name="status" min="0" max="100" />
+                            <input type="hidden" name="statusType" value="Development" />
+                        }
+
+                        @if (User.IsInRole("Müzik Öğretmeni"))
+                        {
+                            <input type="number" name="status" min="0" max="100" />
+                            <input type="hidden" name="statusType" value="Music" />
+                        }
+
+                        @if (User.IsInRole("Dans Öğretmeni"))
+                        {
+                            <input type="number" name="status" min="0" max="100" />
+                            <input type="hidden" name="statusType" value="Dance" />
+                        }
+
+                        @if (User.IsInRole("Spor Öğretmeni"))
+                        {
+                            <input type="number" name="status" min="0" max="100" />
+                            <input type="hidden" name="statusType" value="Sport" />
+                        }
+
+                        @if (User.IsInRole("Alfabe Öğretmeni"))
+                        {
+                            <input type="number" name="status" min="0" max="100" />
+                            <input type="hidden" name="statusType" value="Alphabet" />
+                        }
+
+                        @if (User.IsInRole("Matematik Öğretmeni"))
+                        {
+                            <input type="number" name="status" min="0" max="100" />
+                            <input type="hidden" name="statusType" value="Maths" />
+                        }
+
+                        <button type="submit" class="btn btn-info">Kayıt Et</button>
+                    </form>
+                </td>
+                @if (User.IsInRole("Rehber Öğretmeni"))
+                {
+                    <td>
+                        <form method="post" asp-action="InClassSituationGrade">
+                            <input type="hidden" name="studentId" value="@student.StudentId" />
+                            <input type="text" name="inClassSituation" />
+                            <button type="submit" class="btn btn-info">Kayıt Et</button>
+                        </form>
+                    </td>
+                }
+
+            </tr>
+        }
+    </table>
+    @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}))
+}

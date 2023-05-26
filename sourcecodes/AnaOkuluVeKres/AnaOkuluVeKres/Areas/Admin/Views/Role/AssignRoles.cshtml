@@ -5,9 +5,9 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Öğretmene Rol Atama Sayfası</h1>
+<h1>Kullanıcıya Rol Atama Sayfası</h1>
 <hr />
-<h4>Öğretmen: @Model.TeacherNameSurname</h4>
+<h4>Kullanıcı: @Model.UserName</h4>
 
 @if (!string.IsNullOrEmpty(TempData["Message"] as string))
 {
@@ -26,14 +26,14 @@
         }
         </select>
 
-        <input type="hidden" name="TeacherId" value="@Model.TeacherId" />
+        <input type="hidden" name="TeacherId" value="@Model.UserId" />
         <br />
         <hr />
     <button type="submit" class="btn btn-outline-primary">Role Ata</button>
     <span style="margin-right: 10px;"></span>
-    <a href="/Admin/Role/TeacherList/" class="btn btn-outline-success">Rol Atama Listesine Dön</a>
+    <a href="/Admin/Role/UserList" class="btn btn-outline-success">Rol Atama Listesine Dön</a>
     <span style="margin-right: 10px;"></span>
-    <a href="/Admin/Role/TeacherAssignRolesList/" class="btn btn-outline-info">Rol Listesine Git</a>
+    <a href="/Admin/Role/UserAssignRolesList/" class="btn btn-outline-info">Rol Listesine Git</a>
 }
 
 

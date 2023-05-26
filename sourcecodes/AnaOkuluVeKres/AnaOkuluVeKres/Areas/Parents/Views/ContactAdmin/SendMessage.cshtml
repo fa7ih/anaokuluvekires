@@ -1,0 +1,43 @@
+﻿@model EntityLayer.Concrete.Contact2
+
+@{
+    ViewData["Title"] = "SendMessage";
+    Layout = "~/Views/Shared/_ParentsLayout.cshtml";
+}
+
+<h1 class="display-4">Mesaj Gönder</h1>
+<hr />
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    <hr />
+}
+@using (Html.BeginForm("SendMessage", "ContactAdmin", FormMethod.Post))
+{
+    <div class="form-group">
+        <label class="h5">Göndermek İstediğiniz Yöneticiyi Seçin</label>
+        @Html.DropDownListFor(model => model.Contact2Reciver, (IEnumerable<SelectListItem>)ViewData["Teachers"], "Yönetici Seçin", new { @class = "form-control" })
+    </div>
+    <br />
+    <div class="form-group">
+        <label class="h5">Mesajın Başlığı</label>
+        @Html.TextBoxFor(model => model.Contact2Title, new { @class = "form-control" })
+    </div>
+    <br />
+    <div class="form-group">
+        <label class="h5">Mesajın İçeriği</label>
+        @Html.TextAreaFor(model => model.Contact2Body, new { @class = "form-control", @rows = 4 })
+    </div>
+    <br />
+    <div class="form-group">
+        <label class="h5">Mail Adresiniz</label>
+        @Html.TextBoxFor(model => model.Contact2Mail, new { @class = "form-control" })
+    </div>
+    <br />
+    <div class="form-group">
+        <label class="h5">Telefon Numaranız</label>
+        @Html.TextBoxFor(model => model.Contact2Phone, new { @class = "form-control" })
+    </div>
+    <br />
+    <input type="submit" value="Gönder" class="btn btn-outline-primary" />
+}

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 namespace AnaOkuluVeKres.Areas.Parents.Controllers
 {
     [Area("Parents")]
+    [Authorize(Roles = "Veli,Admin")]
     [Route("Parents/[controller]/[action]")]
     public class MyProfileController : Controller
     {
@@ -24,6 +25,7 @@ namespace AnaOkuluVeKres.Areas.Parents.Controllers
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
             ParentEditViewModel parentEditViewModel = new ParentEditViewModel();
+            parentEditViewModel.userName= values.UserName;
             parentEditViewModel.name= values.Name;
             parentEditViewModel.surname= values.Surname;
             parentEditViewModel.mail = values.Email;
@@ -34,19 +36,23 @@ namespace AnaOkuluVeKres.Areas.Parents.Controllers
         public async Task<IActionResult> Index(ParentEditViewModel parentEditViewModel)
         {
             var parent = await _userManager.FindByNameAsync(User.Identity.Name);
-            if (parentEditViewModel !=null)
+            if (parentEditViewModel != null && parentEditViewModel.image != null)
             {
                 var resource = Directory.GetCurrentDirectory();
                 var extansion = Path.GetExtension(parentEditViewModel.image.FileName);
                 var imageName = Guid.NewGuid() + extansion;
-                var saveLocation = resource + "/wwwroot/ParentImages/" + imageName;
+                var saveLocation = resource + "/wwwroot/UserImages/" + imageName;
                 var stream = new FileStream(saveLocation, FileMode.Create); 
                 await parentEditViewModel.image.CopyToAsync(stream);
                 parent.ImageUrl = imageName;
             }
+            parent.UserName = parentEditViewModel.userName;
             parent.Name= parentEditViewModel.name;
             parent.Surname= parentEditViewModel.surname;
-            parent.PasswordHash= _userManager.PasswordHasher.HashPassword(parent,parentEditViewModel.password);
+            if (parentEditViewModel != null && !string.IsNullOrEmpty(parentEditViewModel.password))
+            {
+                parent.PasswordHash = _userManager.PasswordHasher.HashPassword(parent, parentEditViewModel.password);
+            }
             var result = await _userManager.UpdateAsync(parent);
             if (result.Succeeded)
             {

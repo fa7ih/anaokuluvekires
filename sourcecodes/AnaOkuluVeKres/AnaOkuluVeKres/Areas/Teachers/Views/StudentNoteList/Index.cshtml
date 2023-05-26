@@ -1,0 +1,82 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<AnaOkuluVeKres.Areas.Teachers.Models.StudentViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+    int sayac = 0;
+}
+
+<h1>Öğrenci Notları</h1>
+<hr />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Öğrenci Adı Soyadı</th>
+            <th>Öğrenci Tc</th>
+            <th>Öğrenci Numara</th>
+            @if (User.IsInRole("Müzik Öğretmeni"))
+            {
+                <th>Müzik Notu</th>
+            }
+            @if (User.IsInRole("Dans Öğretmeni"))
+            {
+                <th>Dans Notu</th>
+            }
+            @if (User.IsInRole("Spor Öğretmeni"))
+            {
+                <th>Spor Notu</th>
+            }
+            @if (User.IsInRole("Alfabe Öğretmeni"))
+            {
+                <th>Alfabe Notu</th>
+            }
+            @if (User.IsInRole("Matematik Öğretmeni"))
+            {
+                <th>Matematik Notu</th>
+            }
+            @if (User.IsInRole("Yazılım Öğretmeni"))
+            {
+                <th>Yazılım Notu</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            sayac++;
+            <tr>
+                <td>@sayac</td>
+                <td>@student.Name</td>
+                <td>@student.StudentTc</td>
+                <td>@student.StudentNo</td>
+                @if (User.IsInRole("Müzik Öğretmeni"))
+                {
+                    <td>@student.StudentStatusMusic</td>
+                }
+                @if (User.IsInRole("Dans Öğretmeni"))
+                {
+                    <td>@student.StudentStatusDance</td>
+                }
+                @if (User.IsInRole("Yazılım Öğretmeni"))
+                {
+                    <td>@student.StudentStatusDevelopment</td>
+                }
+                @if (User.IsInRole("Spor Öğretmeni"))
+                {
+                    <td>@student.StudentStatusSport</td>
+                }
+                @if (User.IsInRole("Alfabe Öğretmeni"))
+                {
+                    <td>@student.StudentStatusAlphabet</td>
+                }
+                @if (User.IsInRole("Matematik Öğretmeni"))
+                {
+                    <td>@student.StudentStatusMaths</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}))

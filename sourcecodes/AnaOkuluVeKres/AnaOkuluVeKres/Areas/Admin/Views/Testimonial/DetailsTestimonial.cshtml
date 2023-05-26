@@ -1,24 +1,37 @@
-﻿@model EntityLayer.Concrete.Testimonial
+﻿@model Testimonial
 @{
     ViewData["Title"] = "DetailsTestimonial";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-<h1>@Model.TestimonialNameSurname Düşünürünün Bilgisi</h1>
-<hr />
-<img src="@Url.Content(Model.TestimonialImageUrl)" />
-<hr />
-@using (Html.BeginForm("DetailsTestimonial", "Testimonial", FormMethod.Post))
+@if (Model != null)
 {
+    <h1>@Model.TestimonialNameSurname Düşünürünün Bilgisi</h1>
+    <hr />
     <div class="form-group">
-        <h4>Düşünürün Adı Soyadı: </h4>
-        @Html.TextBoxFor(x => x.TestimonialNameSurname, new { @class = "form-control" })
+        <img src="@Url.Content("~/TestimonialImages/" + Model.TestimonialImageUrl)" alt="Testimonial Image" style="max-width: 300px; max-height: 300px;" />
     </div>
-    <br />
-    <div class="form-group">
-        <h4>Düşünürün Açıklaması: </h4>
-        @Html.TextAreaFor(x => x.TestimonialDescription, new { @class = "form-control", rows = "5" })
-    </div>
-    <br />
-    <button type="submit" class="btn btn-outline-success">Güncelle</button>
+    <hr />
+    <form asp-action="DetailsTestimonial" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="TestimonialId" />
+
+        <div class="form-group">
+            <label asp-for="TestimonialNameSurname" class="h5">Adı</label>
+            <input class="form-control" asp-for="TestimonialNameSurname" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label asp-for="TestimonialDescription" class="h5">Düşüncesi</label>
+            <textarea class="form-control" asp-for="TestimonialDescription" rows="4"></textarea>
+        </div>
+        <br />
+        <div class="form-group">
+            <label asp-for="TestimonialImageFile" class="h5">Resmi</label>
+            <input type="file" class="form-control-file" asp-for="TestimonialImageFile" />
+        </div>
+        <hr />
+        <div class="form-group">
+            <button type="submit" class="btn btn-outline-primary">Güncelle</button>
+            <a asp-action="Index" class="btn btn-outline-secondary">Listeye Geri Dön</a>
+        </div>
+    </form>
 }

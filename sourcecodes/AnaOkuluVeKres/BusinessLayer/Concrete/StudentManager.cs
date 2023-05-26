@@ -18,42 +18,42 @@ namespace BusinessLayer.Concrete
             _studentDal = studentDal;
         }
 
-        public List<Student> GetList()
+        public List<Students2> GetList()
         {
             return _studentDal.GetList();
         }
 
-        public List<Student> GetListApprovalStudent(int id)
+        public List<Students2> GetListApprovalStudent(int id)
         {
             return _studentDal.GetListByFilter(x=>x.AppUser.Id == id && x.Status == "Onay Bekliyor");
         }
 
-        public List<Student> GetlistWithStudentByAccepted(int id)
+        public List<Students2> GetlistWithStudentByAccepted(int id)
         {
             return _studentDal.GetlistWithStudentByAccepted(id);
         }
 
-        public List<Student> GetlistWithStudentByWaitDisapproved(int id)
+        public List<Students2> GetlistWithStudentByWaitDisapproved(int id)
         {
             return _studentDal.GetlistWithStudentByWaitDisapproved(id);
         }
 
-        public void TAdd(Student t)
+        public void TAdd(Students2 t)
         {
             _studentDal.Insert(t);
         }
 
-        public void TDelete(Student t)
+        public void TDelete(Students2 t)
         {
             _studentDal.Delete(t);
         }
 
-        public Student TGetById(int id)
+        public Students2 TGetById(int id)
         {
             return _studentDal.GetById(id);
         }
 
-        public void TUpdate(Student t)
+        public void TUpdate(Students2 t)
         {
             _studentDal.Update(t);
         }

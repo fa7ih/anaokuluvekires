@@ -17,18 +17,15 @@ namespace AnaOkuluVeKres.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Route("Admin/Role")]
-    [AllowAnonymous]
+    [Authorize(Roles = "Admin")]
     public class RoleController : Controller
     {
         private readonly RoleManager<AppRole> _roleManager;
-        TeacherManager teacherManager = new TeacherManager(new EfTeacherDal());
-        private readonly Context _context;
         private readonly UserManager<AppUser> _userManager;
 
-        public RoleController(RoleManager<AppRole> roleManager, Context context, UserManager<AppUser> userManager)
+        public RoleController(RoleManager<AppRole> roleManager,  UserManager<AppUser> userManager)
         {
             _roleManager = roleManager;
-            _context = context;
             _userManager = userManager;
         }
 
@@ -93,17 +90,11 @@ namespace AnaOkuluVeKres.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        [Route("ParentList")]
-        public IActionResult ParentList()
+        [Route("UserList")]
+        public IActionResult UserList()
         {
             var values = _userManager.Users.ToList();
             return View(values);
-        }
-        [Route("TeacherList")]
-        public IActionResult TeacherList()
-        {
-            var teachers = _context.Teachers.Where(t => t.TeacherStatus == true).ToList();
-            return View(teachers);
         }
 
         [Route("AssignRole/{id}")]
@@ -142,97 +133,88 @@ namespace AnaOkuluVeKres.Areas.Admin.Controllers
                     await _userManager.RemoveFromRoleAsync(user, item.RoleName);
                 }
             }
-            return RedirectToAction("ParentList");
+            return RedirectToAction("UserList");
         }
-
         [HttpGet]
-        [Route("AssignRoles/{teacherId}")]
-        public IActionResult AssignRoles(int teacherId)
+        [Route("AssignRoles/{userId}")]
+        public async Task<IActionResult> AssignRoles(string userId)
         {
-            var teacher = _context.Teachers.FirstOrDefault(t => t.TeacherId == teacherId);
-            if (teacher == null)
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
             {
                 return NotFound();
             }
 
-            var roles = _context.Roles.Select(r => new SelectListItem
+            var roles = await _roleManager.Roles.Select(r => new SelectListItem
             {
                 Value = r.Id.ToString(),
                 Text = r.Name
-            }).ToList();
+            }).ToListAsync();
 
             var viewModel = new AssignRoleViewModel
             {
-                TeacherId = teacher.TeacherId,
-                TeacherNameSurname = teacher.TeacherNameSurname,
+                UserId = user.Id,
+                UserName = user.UserName,
                 Roles = roles
             };
 
             return View(viewModel);
         }
+
         [HttpPost]
-        [Route("AssignRoles/{teacherId}")]
-        public IActionResult AssignRoles(AssignRoleViewModel viewModel)
+        [Route("AssignRoles/{userId}")]
+        public async Task<IActionResult> AssignRoles(AssignRoleViewModel viewModel)
         {
-            var teacher = _context.Teachers.FirstOrDefault(t => t.TeacherId == viewModel.TeacherId);
-            if (teacher == null)
+            var user = await _userManager.FindByIdAsync(viewModel.UserId.ToString());
+            if (user == null)
             {
                 return NotFound();
             }
 
             var selectedRoleId = viewModel.SelectedRoleId;
-            var selectedRole = _context.Roles.FirstOrDefault(r => r.Id == selectedRoleId);
+            var selectedRole = await _roleManager.FindByIdAsync(selectedRoleId.ToString());
             if (selectedRole == null)
             {
                 return NotFound();
             }
 
-            var currentRoles = _context.AppRoleTeachers.Where(at => at.TeacherId == teacher.TeacherId).Select(at => at.AppRole).ToList();
+            var userRoles = await _userManager.GetRolesAsync(user);
 
-            if (currentRoles.Any())
+            if (userRoles.Contains(selectedRole.Name))
             {
-                if (currentRoles.Contains(selectedRole))
-                {
-                    TempData["Message"] = "Bu rol zaten öğretmenin rolüdür.";
-                    return RedirectToAction("AssignRoles");
-                }
+                TempData["Message"] = "Bu rol zaten kullanıcının rolüdür.";
+                return RedirectToAction("AssignRoles");
             }
 
-            var newAppRoleTeacher = new AppRoleTeacher
+            var result = await _userManager.AddToRoleAsync(user, selectedRole.Name);
+
+            if (result.Succeeded)
             {
-                AppRole = selectedRole,
-                TeacherId = teacher.TeacherId
-            };
-            _context.AppRoleTeachers.Add(newAppRoleTeacher);
-            _context.SaveChanges();
-
-            TempData["Message"] = "Rol atama işlemi başarıyla gerçekleştirilmiştir.";
-            return RedirectToAction("AssignRoles");
+                TempData["Message"] = "Rol atama işlemi başarıyla gerçekleştirilmiştir.";
+                return RedirectToAction("AssignRoles");
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Rol atama işlemi başarısız oldu.";
+                return RedirectToAction("AssignRoles");
+            }
         }
-
         [HttpGet]
-        [Route("TeacherAssignRolesList")]
-        public IActionResult TeacherAssignRolesList()
+        [Route("UserAssignRolesList")]
+        public async Task<IActionResult> UserAssignRolesList()
         {
-            var teachers = _context.Teachers
-                .Where(t => t.TeacherStatus)
-                .Include(t => t.AppRoleTeachers)
-                .ThenInclude(at => at.AppRole)
-                .ToList();
+            var users = await _userManager.Users.ToListAsync();
 
             var viewModel = new AssignRoleListViewModel
             {
-                Teachers = teachers,
-                AssignedRolesByTeacher = new Dictionary<int, List<string>>()
+                Users = users,
+                AssignedRolesByUser = new Dictionary<string, List<string>>()
             };
 
-            foreach (var teacher in teachers)
+            foreach (var user in users)
             {
-                var assignedRoles = teacher.AppRoleTeachers
-                    .Select(at => at.AppRole.Name) 
-                    .ToList();
-
-                viewModel.AssignedRolesByTeacher.Add(teacher.TeacherId, assignedRoles);
+                var assignedRoles = await _userManager.GetRolesAsync(user);
+                viewModel.AssignedRolesByUser.Add(user.Id.ToString(), assignedRoles.ToList());
             }
 
             return View(viewModel);
